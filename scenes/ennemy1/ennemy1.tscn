@@ -13,6 +13,8 @@ offsets = PackedFloat32Array(0, 0.993333, 1)
 colors = PackedColorArray(0.374861, 0.00029947, 0.441163, 1, 0, 0, 0, 1, 1, 1, 1, 1)
 
 [node name="Ennemy" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 7
 motion_mode = 1
 script = ExtResource("1_woqrw")
 
