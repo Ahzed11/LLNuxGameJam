@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-
+class_name Ennemy1
 const run_speed = 50.0
 
 @export var max_speed : float = 250
@@ -13,8 +13,8 @@ var direction: Vector2
 var MIN_SPEED_VECTOR := Vector2(-max_speed, -max_speed)
 @onready
 var MAX_SPEED_VECTOR := Vector2(max_speed, max_speed)
-@onready
-var player = get_node("%Player")
+
+var player
 
 func _ready():
 	velocity = Vector2(run_speed,run_speed)
