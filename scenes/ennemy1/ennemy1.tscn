@@ -15,7 +15,6 @@ colors = PackedColorArray(0.374861, 0.00029947, 0.441163, 1, 0, 0, 0, 1, 1, 1, 1
 [node name="Ennemy" type="CharacterBody2D"]
 motion_mode = 1
 script = ExtResource("1_woqrw")
-friction = 0.05
 
 [node name="trail" type="Line2D" parent="."]
 top_level = true
