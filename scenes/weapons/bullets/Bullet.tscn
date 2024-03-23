@@ -9,7 +9,7 @@ size = Vector2(38, 6)
 [node name="Bullet" type="RigidBody2D"]
 gravity_scale = 0.0
 script = ExtResource("1_8i3ek")
-lifetime = 0.1
+speed = 200
 
 [node name="BulletCollision" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_lppyc")

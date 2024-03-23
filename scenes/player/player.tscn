@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_g6pqx"]
 [ext_resource type="Texture2D" uid="uid://c1poemy15sb8w" path="res://scenes/player/asset/ship1.png" id="2_x12oj"]
 [ext_resource type="Script" path="res://scenes/ennemy1/trail2.gd" id="3_v8set"]
-
+[ext_resource type="PackedScene" uid="uid://cm8ubmkegxwd1" path="res://scenes/utils/health.tscn" id="3_svxwj"]
 [sub_resource type="Curve" id="Curve_c1cg8"]
 _data = [Vector2(0, 0.989011), 0.0, 1.4, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
@@ -35,3 +35,4 @@ width_curve = SubResource("Curve_c1cg8")
 gradient = SubResource("Gradient_muv0t")
 script = ExtResource("3_v8set")
 MAX_LENGTH = 30
+[node name="Health" parent="." instance=ExtResource("3_svxwj")]

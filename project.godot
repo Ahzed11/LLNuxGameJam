@@ -26,6 +26,10 @@ window/stretch/scale_mode="integer"
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
 
+[autoload]
+
+SignalBus="*res://scenes/utils/signal_bus.gd"
+
 [file_customization]
 
 folder_colors={
