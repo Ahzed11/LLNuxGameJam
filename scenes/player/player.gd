@@ -18,4 +18,5 @@ func _physics_process(delta):
 	velocity = velocity.lerp(Vector2.ZERO, friction)
 	velocity += direction*acceleration
 	velocity = velocity.clamp(MIN_SPEED_VECTOR, MAX_SPEED_VECTOR)
+	rotation = velocity.angle()
 	move_and_slide()
