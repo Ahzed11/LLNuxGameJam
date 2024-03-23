@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-@export var max_speed : float
-@export var acceleration : float
+@export var max_speed : float = 250
+@export var acceleration : float = 50
 @export var friction : float = 0.05
 
 var direction: Vector2 
@@ -15,6 +15,9 @@ func _ready():
 
 func _process(delta):
 	direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down").normalized()
+	
+	if Input.is_key_pressed(KEY_K):
+		SignalBus.on_player_take_damage.emit(40)
 
 func _physics_process(delta):
 	velocity = velocity.lerp(Vector2.ZERO, friction)

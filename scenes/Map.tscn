@@ -1,43 +1,28 @@
-[gd_scene load_steps=6 format=3 uid="uid://ji4qcbyfntfj"]
+[gd_scene load_steps=3 format=3 uid="uid://ji4qcbyfntfj"]
 
+[ext_resource type="Texture2D" uid="uid://dkw6m3qi2tdkj" path="res://assets/Backgrounds/spr_stars02.png" id="1_3vqe2"]
 [ext_resource type="Texture2D" uid="uid://d2ecbckqtr1if" path="res://res/space.png" id="1_57yiy"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_w0vbc"]
-normal = Vector2(-1, 0)
+[node name="Parallax" type="CanvasLayer"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_jcx3y"]
-normal = Vector2(1, 0)
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_2o388"]
+[node name="Layer1" type="ParallaxLayer" parent="ParallaxBackground"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_w42e7"]
-normal = Vector2(0, 1)
-
-[node name="Map" type="Node2D"]
-
-[node name="Background" type="Area2D" parent="."]
-position = Vector2(640, 360)
-scale = Vector2(0.67, 0.67)
-
-[node name="Space" type="Sprite2D" parent="Background"]
+[node name="Space" type="Sprite2D" parent="ParallaxBackground/Layer1"]
+position = Vector2(640, 362)
 texture = ExtResource("1_57yiy")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Background"]
-position = Vector2(-955.224, -11.9403)
-scale = Vector2(1.49254, 1.49254)
-shape = SubResource("WorldBoundaryShape2D_w0vbc")
+[node name="Layer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.3, 0.3)
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Background"]
-position = Vector2(955.224, 0)
-scale = Vector2(1.49254, 1.49254)
-shape = SubResource("WorldBoundaryShape2D_jcx3y")
+[node name="StarLayer1" type="Sprite2D" parent="ParallaxBackground/Layer2"]
+position = Vector2(634, 365)
+texture = ExtResource("1_3vqe2")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Background"]
-position = Vector2(-59.7015, -540.298)
-scale = Vector2(1.49254, 1.49254)
-shape = SubResource("WorldBoundaryShape2D_2o388")
+[node name="Layer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.6, 0.6)
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Background"]
-position = Vector2(-11.9403, 537.313)
-scale = Vector2(1.49254, 1.49254)
-shape = SubResource("WorldBoundaryShape2D_w42e7")
+[node name="StarLayer2" type="Sprite2D" parent="ParallaxBackground/Layer3"]
+position = Vector2(634, 350)
+texture = ExtResource("1_3vqe2")
