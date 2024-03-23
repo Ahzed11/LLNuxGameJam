@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://uext6j0prhlf"]
 
 [ext_resource type="Script" path="res://scenes/ennemy1/ennemy1.gd" id="1_woqrw"]
-[ext_resource type="Texture2D" uid="uid://jkbci7vwxmmx" path="res://scenes/ennemy1/assets/ship (1).png" id="2_bmx5x"]
+[ext_resource type="Texture2D" uid="uid://cff51obcsip5l" path="res://assets/PNG/Enemies/enemyBlack5.png" id="3_ox75u"]
 [ext_resource type="Script" path="res://scenes/ennemy1/trail2.gd" id="4_antru"]
 
 [sub_resource type="Curve" id="Curve_cr2ot"]
@@ -27,10 +27,8 @@ script = ExtResource("4_antru")
 MAX_LENGTH = 30
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-1, 2)
-rotation = 1.56464
-texture = ExtResource("2_bmx5x")
-offset = Vector2(-4, 0)
+rotation = -1.5708
+texture = ExtResource("3_ox75u")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(120, 0, 72, -32, 8, -96, -96, -104, -40, -56, -104, -48, -80, -32, -120, 0, -80, 24, -104, 40, -40, 64, -96, 104, 8, 96, 72, 32)
+polygon = PackedVector2Array(40, -8, 32, -16, 32, -24, -40, -48, -40, -32, -24, -16, -24, 16, -40, 32, -40, 48, 32, 24, 32, 16, 40, 8)

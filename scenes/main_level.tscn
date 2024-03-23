@@ -1,18 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://k16spl1fjstm"]
+[gd_scene load_steps=5 format=3 uid="uid://k16spl1fjstm"]
 
 [ext_resource type="PackedScene" uid="uid://d2q1okg2p2mtl" path="res://scenes/player/player.tscn" id="1_3ju6y"]
-[ext_resource type="PackedScene" path="res://scenes/Map.tscn" id="1_7vx2y"]
+[ext_resource type="PackedScene" uid="uid://ji4qcbyfntfj" path="res://scenes/Map.tscn" id="1_7vx2y"]
 [ext_resource type="PackedScene" uid="uid://uext6j0prhlf" path="res://scenes/ennemy1/ennemy1.tscn" id="2_t3idd"]
+[ext_resource type="PackedScene" uid="uid://booltlskuj0ki" path="res://scenes/Portal/Portal.tscn" id="4_tdgl1"]
 
 [node name="MainLevel" type="Node2D"]
 
 [node name="Map" parent="." instance=ExtResource("1_7vx2y")]
 z_index = -10
 
+[node name="Portal" parent="." instance=ExtResource("4_tdgl1")]
+position = Vector2(634, 362)
+
 [node name="Player" parent="." instance=ExtResource("1_3ju6y")]
 unique_name_in_owner = true
 position = Vector2(204, 95)
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.1, 0.1)
 
 [node name="Ennemy1" parent="." instance=ExtResource("2_t3idd")]
+position = Vector2(1084, 110)
 scale = Vector2(0.3, 0.3)

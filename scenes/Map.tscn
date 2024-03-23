@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bd6428mi81tb3"]
+[gd_scene load_steps=6 format=3 uid="uid://ji4qcbyfntfj"]
 
 [ext_resource type="Texture2D" uid="uid://d2ecbckqtr1if" path="res://res/space.png" id="1_57yiy"]
 
@@ -12,11 +12,6 @@ normal = Vector2(1, 0)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_w42e7"]
 normal = Vector2(0, 1)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_hsaw2"]
-radius = 102.45
-
-[sub_resource type="MeshTexture" id="MeshTexture_hleq1"]
 
 [node name="Map" type="Node2D"]
 
@@ -46,16 +41,3 @@ shape = SubResource("WorldBoundaryShape2D_2o388")
 position = Vector2(-11.9403, 537.313)
 scale = Vector2(1.49254, 1.49254)
 shape = SubResource("WorldBoundaryShape2D_w42e7")
-
-[node name="Portal" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal"]
-position = Vector2(640, 360)
-shape = SubResource("CircleShape2D_hsaw2")
-
-[node name="Sprite2D" type="Sprite2D" parent="Portal"]
-texture = SubResource("MeshTexture_hleq1")
-
-[node name="Line2D" type="Line2D" parent="Portal"]
-points = PackedVector2Array(670, 267, 718, 295, 739, 340, 740, 376, 724, 410, 696, 444, 644, 460, 592, 450, 556, 419, 536, 373, 537, 324, 555, 288, 593, 265, 633, 260)
-closed = true

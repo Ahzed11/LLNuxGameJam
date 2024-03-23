@@ -15,6 +15,10 @@ run/main_scene="res://scenes/main_level.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+SignalBus="*res://scenes/utils/signal_bus.gd"
+
 [display]
 
 window/size/viewport_width=1280
@@ -25,10 +29,6 @@ window/stretch/scale_mode="integer"
 
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
-
-[autoload]
-
-SignalBus="*res://scenes/utils/signal_bus.gd"
 
 [file_customization]
 
