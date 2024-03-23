@@ -3,8 +3,8 @@ extends CharacterBody2D
 
 const run_speed = 50.0
 
-@export var max_speed : float = 300
-@export var acceleration : float = 100
+@export var max_speed : float = 250
+@export var acceleration : float = 50
 @export var friction : float = 0.005
 
 var direction: Vector2
@@ -17,20 +17,13 @@ var MAX_SPEED_VECTOR := Vector2(max_speed, max_speed)
 var player = get_node("%Player")
 
 func _ready():
-	pass
+	velocity = Vector2(run_speed,run_speed)
 
 func _physics_process(delta):
-	
-	velocity = Vector2.ZERO
-	position.direction_to(player.position)
+
 	direction = position.direction_to(player.position)
-	rotation = rotate_toward(rotation,direction.angle(),delta)
-	
-	if direction == Vector2.ZERO:
-		velocity = velocity.lerp(Vector2.ZERO, friction)
-	else:
-		velocity += Vector2(cos(rotation),sin(rotation))*acceleration
-	
+	rotation =  rotate_toward(rotation,direction.angle(),delta*4)
+	velocity += Vector2(cos(rotation),sin(rotation))*acceleration
 	velocity = velocity.clamp(MIN_SPEED_VECTOR, MAX_SPEED_VECTOR)
 	
 	move_and_slide()

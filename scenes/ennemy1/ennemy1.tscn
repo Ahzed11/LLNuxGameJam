@@ -1,7 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://uext6j0prhlf"]
+[gd_scene load_steps=7 format=3 uid="uid://uext6j0prhlf"]
 
 [ext_resource type="Script" path="res://scenes/ennemy1/ennemy1.gd" id="1_woqrw"]
 [ext_resource type="Texture2D" uid="uid://jkbci7vwxmmx" path="res://scenes/ennemy1/assets/ship (1).png" id="2_bmx5x"]
+[ext_resource type="Script" path="res://scenes/ennemy1/trail2.gd" id="4_antru"]
+
+[sub_resource type="Curve" id="Curve_cr2ot"]
+_data = [Vector2(0, 0.989011), 0.0, 1.4, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_7karw"]
+offsets = PackedFloat32Array(0, 0.993333, 1)
+colors = PackedColorArray(0.580392, 0, 0, 1, 0.933333, 0.839216, 0.0784314, 1, 1, 1, 1, 1)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gqj71"]
 radius = 81.0
@@ -11,12 +20,21 @@ height = 218.0
 motion_mode = 1
 script = ExtResource("1_woqrw")
 
+[node name="trail" type="Line2D" parent="."]
+top_level = true
+z_index = -1
+width = 20.0
+width_curve = SubResource("Curve_cr2ot")
+gradient = SubResource("Gradient_7karw")
+script = ExtResource("4_antru")
+MAX_LENGTH = 30
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_gqj71")
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-1, 2)
 rotation = 1.56464
 texture = ExtResource("2_bmx5x")
 offset = Vector2(-4, 0)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-rotation = -1.5708
-shape = SubResource("CapsuleShape2D_gqj71")
