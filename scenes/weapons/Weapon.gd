@@ -32,7 +32,7 @@ func _process(delta):
 	
 func _shoot():
 	var new_bullet: Bullet = bullet.instantiate()
-	new_bullet.position = position
+	new_bullet.position = global_position
 	get_tree().root.add_child(new_bullet)
 	
 	round_amount -= 1

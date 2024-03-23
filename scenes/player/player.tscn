@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://d2q1okg2p2mtl"]
+[gd_scene load_steps=8 format=3 uid="uid://d2q1okg2p2mtl"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_g6pqx"]
 [ext_resource type="Texture2D" uid="uid://dehl1ccaacu54" path="res://assets/PNG/playerShip2_blue.png" id="2_u36rm"]
 [ext_resource type="PackedScene" uid="uid://cm8ubmkegxwd1" path="res://scenes/utils/health.tscn" id="3_svxwj"]
 [ext_resource type="Script" path="res://scenes/ennemy1/trail2.gd" id="3_v8set"]
+[ext_resource type="PackedScene" uid="uid://bmouqko1mvlse" path="res://scenes/weapons/Weapon.tscn" id="5_er62b"]
 
 [sub_resource type="Curve" id="Curve_c1cg8"]
 _data = [Vector2(0, 0.989011), 0.0, 1.4, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -37,3 +38,5 @@ MAX_LENGTH = 30
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(144, 8, 64, 40, -24, 216, -128, 144, -112, 64, -144, 40, -144, -40, -112, -64, -128, -144, -24, -216, 64, -40, 144, -8)
+
+[node name="Weapon" parent="." instance=ExtResource("5_er62b")]
