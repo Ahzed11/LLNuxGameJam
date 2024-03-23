@@ -1,23 +1,24 @@
 [gd_scene load_steps=3 format=3 uid="uid://ji4qcbyfntfj"]
 
 [ext_resource type="Texture2D" uid="uid://dkw6m3qi2tdkj" path="res://assets/Backgrounds/spr_stars02.png" id="1_3vqe2"]
-[ext_resource type="Texture2D" uid="uid://d2ecbckqtr1if" path="res://res/space.png" id="1_57yiy"]
+[ext_resource type="Texture2D" uid="uid://c6m4qwk3mygqk" path="res://assets/Space Background.png" id="1_ofen6"]
 
 [node name="Parallax" type="CanvasLayer"]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="Layer1" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.2, 0.2)
 
 [node name="Space" type="Sprite2D" parent="ParallaxBackground/Layer1"]
 texture_repeat = 2
-position = Vector2(640, 362)
-texture = ExtResource("1_57yiy")
+position = Vector2(641, 362)
+texture = ExtResource("1_ofen6")
 region_enabled = true
 region_rect = Rect2(0, 0, 10000, 10000)
 
 [node name="Layer2" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0.3, 0.3)
+motion_scale = Vector2(0.4, 0.4)
 
 [node name="StarLayer1" type="Sprite2D" parent="ParallaxBackground/Layer2"]
 texture_repeat = 2
@@ -25,7 +26,6 @@ position = Vector2(634, 365)
 texture = ExtResource("1_3vqe2")
 
 [node name="Layer3" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0.6, 0.6)
 
 [node name="StarLayer2" type="Sprite2D" parent="ParallaxBackground/Layer3"]
 texture_repeat = 2
