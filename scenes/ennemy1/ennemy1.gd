@@ -20,13 +20,17 @@ func _ready():
 	pass
 
 func _physics_process(delta):
+	
 	velocity = Vector2.ZERO
+	position.direction_to(player.position)
 	direction = position.direction_to(player.position)
-	print(direction)
+	rotation = rotate_toward(rotation,direction.angle(),delta)
+	
 	if direction == Vector2.ZERO:
 		velocity = velocity.lerp(Vector2.ZERO, friction)
 	else:
-		velocity += direction * acceleration
+		velocity += Vector2(cos(rotation),sin(rotation))*acceleration
 	
 	velocity = velocity.clamp(MIN_SPEED_VECTOR, MAX_SPEED_VECTOR)
+	
 	move_and_slide()
