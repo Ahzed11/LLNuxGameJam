@@ -13,3 +13,14 @@ position = Vector2(154, 75)
 
 [node name="Ennemy" parent="." instance=ExtResource("2_t3idd")]
 position = Vector2(334, 111)
+[gd_scene load_steps=3 format=3 uid="uid://dykhgr4w57dnk"]
+
+[ext_resource type="PackedScene" uid="uid://d2q1okg2p2mtl" path="res://scenes/player/player.tscn" id="1_3ju6y"]
+[ext_resource type="Texture2D" uid="uid://t26m2pry26q6" path="res://icon.svg" id="1_ycanv"]
+
+[node name="MainLevel" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_3ju6y")]
+max_speed = 400.0
+acceleration = 100.0
+friction = 0.05
