@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://c653e1rl3ja77"]
+
+[ext_resource type="Script" path="res://scenes/Timer.gd" id="1_e3ry7"]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_e3ry7")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[node name="TimerText" type="TextEdit" parent="."]
+offset_top = 664.0
+offset_right = 152.0
+offset_bottom = 715.0
