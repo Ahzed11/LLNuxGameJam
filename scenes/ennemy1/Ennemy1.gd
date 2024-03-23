@@ -13,6 +13,7 @@ var direction: Vector2
 @onready var MIN_SPEED_VECTOR := Vector2(-max_speed, -max_speed)
 @onready var MAX_SPEED_VECTOR := Vector2(max_speed, max_speed)
 @onready var health := $Health
+@onready var explosion := preload("res://scenes/audio/explosion/explosion.tscn")
 
 var player
 
@@ -31,4 +32,7 @@ func _physics_process(delta):
 
 func _take_damage(current_health, amount):
 	if current_health == 0:
+		var explosion_instance = explosion.instantiate()
+		explosion_instance.position = global_position
+		get_tree().root.add_child(explosion_instance)
 		queue_free()
