@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://betlq25oennow"]
+
+[ext_resource type="Script" path="res://scenes/weapons/Turret/Turret.gd" id="1_45fqq"]
+[ext_resource type="Texture2D" uid="uid://dp88vu33myw4n" path="res://assets/PNG/Parts/gun04.png" id="1_sbgd1"]
+
+[node name="Parent" type="Node2D"]
+script = ExtResource("1_45fqq")
+
+[node name="Turret" type="Sprite2D" parent="."]
+rotation = 4.71239
+scale = Vector2(2, 2)
+texture = ExtResource("1_sbgd1")
