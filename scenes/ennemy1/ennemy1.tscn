@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://uext6j0prhlf"]
+[gd_scene load_steps=6 format=3 uid="uid://uext6j0prhlf"]
 
 [ext_resource type="Script" path="res://scenes/ennemy1/ennemy1.gd" id="1_woqrw"]
 [ext_resource type="Texture2D" uid="uid://jkbci7vwxmmx" path="res://scenes/ennemy1/assets/ship (1).png" id="2_bmx5x"]
@@ -11,10 +11,6 @@ point_count = 2
 [sub_resource type="Gradient" id="Gradient_7karw"]
 offsets = PackedFloat32Array(0, 0.993333, 1)
 colors = PackedColorArray(0.374861, 0.00029947, 0.441163, 1, 0, 0, 0, 1, 1, 1, 1, 1)
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gqj71"]
-radius = 81.0
-height = 218.0
 
 [node name="Ennemy" type="CharacterBody2D"]
 motion_mode = 1
@@ -30,12 +26,11 @@ gradient = SubResource("Gradient_7karw")
 script = ExtResource("4_antru")
 MAX_LENGTH = 30
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-rotation = -1.5708
-shape = SubResource("CapsuleShape2D_gqj71")
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-1, 2)
 rotation = 1.56464
 texture = ExtResource("2_bmx5x")
 offset = Vector2(-4, 0)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(120, 0, 72, -32, 8, -96, -96, -104, -40, -56, -104, -48, -80, -32, -120, 0, -80, 24, -104, 40, -40, 64, -96, 104, 8, 96, 72, 32)
