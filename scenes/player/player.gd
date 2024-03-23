@@ -15,10 +15,8 @@ func _process(delta):
 	direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down").normalized()
 
 func _physics_process(delta):
-	if direction == Vector2.ZERO:
-		velocity = velocity.lerp(Vector2.ZERO, friction)
-	else:
-		velocity += direction * acceleration
+	velocity = velocity.lerp(Vector2.ZERO, friction)
+	velocity += direction*acceleration
 	
 	velocity = velocity.clamp(MIN_SPEED_VECTOR, MAX_SPEED_VECTOR)
 	move_and_slide()
