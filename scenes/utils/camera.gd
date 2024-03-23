@@ -4,16 +4,30 @@ extends Camera2D
 
 var rng = RandomNumberGenerator.new()
 var shake_strength := 0.0
+var player_screen_margin_x = 500
+var player_screen_margin_y = 300
 
 @onready var start_position := position
 
 func _ready():
 	SignalBus.on_player_take_damage.connect(_apply_shake)
+	position.x += 400
 
 func _process(delta):
+	if -position.x-get_viewport().size.x/2+%Player.position.x < player_screen_margin_x:
+		position.x -= player_screen_margin_x-(-position.x-get_viewport().size.x/2+%Player.position.x)
+		
+	if 1.5*get_viewport().size.x-(-position.x+%Player.position.x) < player_screen_margin_x:
+		position.x += player_screen_margin_x-(1.5*get_viewport().size.x-(-position.x+%Player.position.x))
+		
+	if -position.y-get_viewport().size.y/2+%Player.position.y < player_screen_margin_y:
+		position.y -= player_screen_margin_y-(-position.y-get_viewport().size.y/2+%Player.position.y)
+		
+	if 1.5*get_viewport().size.y-(-position.y+%Player.position.y) < player_screen_margin_y:
+		position.y += player_screen_margin_y-(1.5*get_viewport().size.y-(-position.y+%Player.position.y))
+
 	if shake_strength > 0:
 		shake_strength = lerpf(shake_strength, 0, shake_fade * delta)
-		
 		offset = _random_offset()
 
 func _apply_shake(amount):
