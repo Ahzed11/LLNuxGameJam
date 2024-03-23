@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://uext6j0prhlf"]
 
-[ext_resource type="Script" path="res://scenes/ennemy1/ennemy1.gd" id="1_woqrw"]
-[ext_resource type="Texture2D" uid="uid://cff51obcsip5l" path="res://assets/PNG/Enemies/enemyBlack5.png" id="3_ox75u"]
-[ext_resource type="Script" path="res://scenes/ennemy1/trail2.gd" id="4_antru"]
+[ext_resource type="Script" path="res://scenes/ennemy1/Ennemy1.gd" id="1_2emdu"]
+[ext_resource type="Script" path="res://scenes/ennemy1/trail2.gd" id="2_8v74i"]
+[ext_resource type="Texture2D" uid="uid://cff51obcsip5l" path="res://assets/PNG/Enemies/enemyBlack5.png" id="3_mp0ab"]
 
 [sub_resource type="Curve" id="Curve_cr2ot"]
 _data = [Vector2(0, 0.989011), 0.0, 1.4, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -13,10 +13,11 @@ offsets = PackedFloat32Array(0, 0.993333, 1)
 colors = PackedColorArray(0.374861, 0.00029947, 0.441163, 1, 0, 0, 0, 1, 1, 1, 1, 1)
 
 [node name="Ennemy" type="CharacterBody2D"]
+scale = Vector2(0.25, 0.25)
 collision_layer = 4
 collision_mask = 7
 motion_mode = 1
-script = ExtResource("1_woqrw")
+script = ExtResource("1_2emdu")
 
 [node name="trail" type="Line2D" parent="."]
 top_level = true
@@ -24,12 +25,12 @@ z_index = -1
 width = 20.0
 width_curve = SubResource("Curve_cr2ot")
 gradient = SubResource("Gradient_7karw")
-script = ExtResource("4_antru")
+script = ExtResource("2_8v74i")
 MAX_LENGTH = 30
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = -1.5708
-texture = ExtResource("3_ox75u")
+texture = ExtResource("3_mp0ab")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(40, -8, 32, -16, 32, -24, -40, -48, -40, -32, -24, -16, -24, 16, -40, 32, -40, 48, 32, 24, 32, 16, 40, 8)
