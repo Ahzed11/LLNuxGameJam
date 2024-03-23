@@ -6,8 +6,6 @@ extends CharacterBody2D
 
 var direction: Vector2 
 
-@onready var MIN_SPEED_VECTOR := Vector2(-max_speed, -max_speed)
-@onready var MAX_SPEED_VECTOR := Vector2(max_speed, max_speed)
 @onready var health : Health = $Health
 
 func _ready():
@@ -23,7 +21,7 @@ func _process(delta):
 func _physics_process(delta):
 	velocity = velocity.lerp(Vector2.ZERO, friction)
 	velocity += direction*acceleration
-	velocity = velocity.clamp(MIN_SPEED_VECTOR, MAX_SPEED_VECTOR)
+	velocity = velocity.limit_length(max_speed)
 	rotation = velocity.angle()
 	move_and_slide()
 
