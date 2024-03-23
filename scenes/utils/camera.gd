@@ -5,6 +5,8 @@ extends Camera2D
 var rng = RandomNumberGenerator.new()
 var shake_strength := 0.0
 
+@onready var start_position := position
+
 func _ready():
 	SignalBus.on_player_take_damage.connect(_apply_shake)
 

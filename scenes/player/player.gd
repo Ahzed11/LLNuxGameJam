@@ -15,6 +15,9 @@ func _ready():
 
 func _process(delta):
 	direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down").normalized()
+	
+	if Input.is_key_pressed(KEY_K):
+		SignalBus.on_player_take_damage.emit(40)
 
 func _physics_process(delta):
 	velocity = velocity.lerp(Vector2.ZERO, friction)
