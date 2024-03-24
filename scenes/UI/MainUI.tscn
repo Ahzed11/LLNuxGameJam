@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://c2e6w01wjjx2b"]
+[gd_scene load_steps=4 format=3 uid="uid://c2e6w01wjjx2b"]
 
 [ext_resource type="Script" path="res://scenes/UI/HPbar.gd" id="1_c0yl5"]
+[ext_resource type="Script" path="res://scenes/UI/ScoreLabel.gd" id="2_dc012"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_abpyy"]
+font_size = 24
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -10,13 +14,27 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TopBar" type="HBoxContainer" parent="."]
-custom_minimum_size = Vector2(0, 40)
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 10
+anchors_preset = 15
 anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
+grow_vertical = 2
 
-[node name="HPbar" type="HBoxContainer" parent="TopBar"]
+[node name="TopBar" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="HPbar" type="HBoxContainer" parent="VBoxContainer/TopBar"]
 layout_mode = 2
 script = ExtResource("1_c0yl5")
+
+[node name="ScoreLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 10
+text = "Score 0"
+label_settings = SubResource("LabelSettings_abpyy")
+horizontal_alignment = 1
+script = ExtResource("2_dc012")

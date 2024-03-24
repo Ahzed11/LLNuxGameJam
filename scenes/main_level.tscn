@@ -4,11 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://d2q1okg2p2mtl" path="res://scenes/player/player.tscn" id="1_3ju6y"]
 [ext_resource type="PackedScene" uid="uid://ji4qcbyfntfj" path="res://scenes/Map.tscn" id="1_7vx2y"]
 [ext_resource type="Script" path="res://scenes/utils/camera.gd" id="1_eqmcx"]
-[ext_resource type="PackedScene" uid="uid://uext6j0prhlf" path="res://scenes/Enemies/Enemy1.tscn" id="2_imeru"]
 [ext_resource type="PackedScene" uid="uid://c2e6w01wjjx2b" path="res://scenes/UI/MainUI.tscn" id="3_mtapk"]
 [ext_resource type="PackedScene" uid="uid://booltlskuj0ki" path="res://scenes/Portal/Portal.tscn" id="4_tdgl1"]
 [ext_resource type="PackedScene" uid="uid://ylbrmy03y0e5" path="res://scenes/spawner/spawner.tscn" id="8_bmhf0"]
 [ext_resource type="Shader" path="res://scenes/Portal/Portal.gdshader" id="8_jnvhj"]
+[ext_resource type="PackedScene" uid="uid://bqnogtclrqxcc" path="res://scenes/UI/death_ui.tscn" id="9_xntqj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_asb36"]
 shader = ExtResource("8_jnvhj")
@@ -26,7 +26,6 @@ point_count = 6
 
 [node name="MainLevel" type="Node2D"]
 script = ExtResource("1_0yvhe")
-ennemy1 = ExtResource("2_imeru")
 
 [node name="Map" parent="." instance=ExtResource("1_7vx2y")]
 
@@ -60,3 +59,5 @@ offset_bottom = 421.0
 [node name="mobPaths" type="Path2D" parent="."]
 position = Vector2(-640, -359)
 curve = SubResource("Curve2D_2fx2g")
+
+[node name="DeathUI" parent="." instance=ExtResource("9_xntqj")]
