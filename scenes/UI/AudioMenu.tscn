@@ -1,0 +1,125 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwjhnlr2ejobr"]
+
+[ext_resource type="Script" path="res://scenes/UI/AudioMenu.gd" id="1_dlepy"]
+[ext_resource type="Texture2D" uid="uid://c6m4qwk3mygqk" path="res://assets/Space Background.png" id="1_j2hub"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5jhm0"]
+font_size = 48
+
+[node name="AudioMenu" type="Control" node_paths=PackedStringArray("master_slider", "sfx_slider", "music_slider", "quit_button")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dlepy")
+master_slider = NodePath("AspectRatioContainer/Vertical/Panel/Settings/Master/MasterSlider")
+sfx_slider = NodePath("AspectRatioContainer/Vertical/Panel/Settings/FX/FXSLider")
+music_slider = NodePath("AspectRatioContainer/Vertical/Panel/Settings/Music/FXSLider")
+quit_button = NodePath("AspectRatioContainer/Vertical/Panel/Settings/Quit")
+
+[node name="SpaceBackground" type="Sprite2D" parent="."]
+position = Vector2(953, 440)
+texture = ExtResource("1_j2hub")
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+ratio = 0.6
+
+[node name="Vertical" type="VBoxContainer" parent="AspectRatioContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Spacer3" type="Label" parent="AspectRatioContainer/Vertical"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "
+"
+horizontal_alignment = 1
+
+[node name="Title" type="Label" parent="AspectRatioContainer/Vertical"]
+layout_mode = 2
+text = "Settings"
+label_settings = SubResource("LabelSettings_5jhm0")
+horizontal_alignment = 1
+
+[node name="Panel" type="Panel" parent="AspectRatioContainer/Vertical"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Settings" type="VBoxContainer" parent="AspectRatioContainer/Vertical/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Master" type="HBoxContainer" parent="AspectRatioContainer/Vertical/Panel/Settings"]
+layout_mode = 2
+
+[node name="MasterLabel" type="Label" parent="AspectRatioContainer/Vertical/Panel/Settings/Master"]
+layout_mode = 2
+text = "Master"
+
+[node name="MasterSlider" type="HSlider" parent="AspectRatioContainer/Vertical/Panel/Settings/Master"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = -6.0
+max_value = 6.0
+step = 0.1
+
+[node name="FX" type="HBoxContainer" parent="AspectRatioContainer/Vertical/Panel/Settings"]
+layout_mode = 2
+
+[node name="FXLabel" type="Label" parent="AspectRatioContainer/Vertical/Panel/Settings/FX"]
+layout_mode = 2
+text = "    FX     "
+
+[node name="FXSLider" type="HSlider" parent="AspectRatioContainer/Vertical/Panel/Settings/FX"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = -6.0
+max_value = 6.0
+step = 0.1
+
+[node name="Music" type="HBoxContainer" parent="AspectRatioContainer/Vertical/Panel/Settings"]
+layout_mode = 2
+
+[node name="FXLabel" type="Label" parent="AspectRatioContainer/Vertical/Panel/Settings/Music"]
+layout_mode = 2
+text = "Music   "
+
+[node name="FXSLider" type="HSlider" parent="AspectRatioContainer/Vertical/Panel/Settings/Music"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = -6.0
+max_value = 6.0
+step = 0.1
+
+[node name="Spacer" type="Label" parent="AspectRatioContainer/Vertical/Panel/Settings"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "
+"
+horizontal_alignment = 1
+
+[node name="Quit" type="Button" parent="AspectRatioContainer/Vertical/Panel/Settings"]
+layout_mode = 2
+text = "Quit"
+
+[node name="Spacer" type="Label" parent="AspectRatioContainer/Vertical"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "
+"
+horizontal_alignment = 1
