@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://cbe2cf36r07gi" path="res://assets/SFX/explosion.wav" id="3_hi5mr"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_wm8ef"]
+random_pitch = 2.0
 streams_count = 3
 stream_0/stream = ExtResource("1_bfu4p")
 stream_0/weight = 1.0

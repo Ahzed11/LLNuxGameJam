@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://5vopoy5jhmfe" path="res://assets/Bonus/sfx_lose.ogg" id="6_x6cbr"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_oxfhv"]
+random_pitch = 2.0
 streams_count = 2
 stream_0/stream = ExtResource("4_k601t")
 stream_0/weight = 1.0
@@ -28,6 +29,8 @@ bullet = ExtResource("2_jrjk6")
 
 [node name="WeaponShootAudio" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_oxfhv")
+bus = &"SFX"
 
 [node name="WeaponReloadAudio" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_t2pyi")
+bus = &"SFX"
