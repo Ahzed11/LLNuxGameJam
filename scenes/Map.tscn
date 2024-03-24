@@ -24,6 +24,8 @@ motion_scale = Vector2(0.4, 0.4)
 texture_repeat = 2
 position = Vector2(634, 365)
 texture = ExtResource("1_3vqe2")
+region_enabled = true
+region_rect = Rect2(0, 0, 10000, 10000)
 
 [node name="Layer3" type="ParallaxLayer" parent="ParallaxBackground"]
 
@@ -31,3 +33,30 @@ texture = ExtResource("1_3vqe2")
 texture_repeat = 2
 position = Vector2(634, 350)
 texture = ExtResource("1_3vqe2")
+flip_h = true
+flip_v = true
+region_enabled = true
+region_rect = Rect2(0, 0, 10000, 10000)
+
+[node name="Layer4" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.8, 0.8)
+
+[node name="StarLayer2" type="Sprite2D" parent="ParallaxBackground/Layer4"]
+texture_repeat = 2
+position = Vector2(634, 350)
+texture = ExtResource("1_3vqe2")
+offset = Vector2(1, 0)
+flip_h = true
+region_enabled = true
+region_rect = Rect2(0, 0, 10000, 10000)
+
+[node name="Layer5" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.9, 0.9)
+
+[node name="StarLayer2" type="Sprite2D" parent="ParallaxBackground/Layer5"]
+texture_repeat = 2
+position = Vector2(634, 350)
+texture = ExtResource("1_3vqe2")
+flip_v = true
+region_enabled = true
+region_rect = Rect2(0, 0, 10000, 10000)

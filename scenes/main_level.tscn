@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://k16spl1fjstm"]
+[gd_scene load_steps=12 format=3 uid="uid://k16spl1fjstm"]
 
 [ext_resource type="Script" path="res://scenes/main_level.gd" id="1_0yvhe"]
 [ext_resource type="PackedScene" uid="uid://d2q1okg2p2mtl" path="res://scenes/player/player.tscn" id="1_3ju6y"]
@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://booltlskuj0ki" path="res://scenes/Portal/Portal.tscn" id="4_tdgl1"]
 [ext_resource type="PackedScene" uid="uid://ylbrmy03y0e5" path="res://scenes/spawner/spawner.tscn" id="8_bmhf0"]
 [ext_resource type="Shader" path="res://scenes/Portal/Portal.gdshader" id="8_jnvhj"]
-[ext_resource type="PackedScene" uid="uid://crrvmojgtbg14" path="res://scenes/Enemies/Enemy2.tscn" id="10_bg1s6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_asb36"]
 shader = ExtResource("8_jnvhj")
@@ -47,6 +46,7 @@ anchor_mode = 0
 script = ExtResource("1_eqmcx")
 
 [node name="Glitch" type="ColorRect" parent="Parent/Camera"]
+visible = false
 z_index = 12
 material = SubResource("ShaderMaterial_asb36")
 offset_left = -94.0
@@ -55,7 +55,6 @@ offset_right = 1359.0
 offset_bottom = 794.0
 
 [node name="Spawner" parent="." instance=ExtResource("8_bmhf0")]
-enemy = ExtResource("10_bg1s6")
 
 [node name="mobPaths" type="Path2D" parent="."]
 curve = SubResource("Curve2D_2fx2g")
