@@ -13,7 +13,7 @@ func _process(_delta):
 	
 func take_damage(amount):
 	super(amount)
-	SignalBus.on_player_take_damage.emit(amount)
+	SignalBus.on_player_take_damage.emit(health, amount)
 
 func die():
 	super()

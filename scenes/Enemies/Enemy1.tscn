@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://uext6j0prhlf"]
 
-[ext_resource type="Script" path="res://scenes/ennemy1/Ennemy1.gd" id="1_2emdu"]
-[ext_resource type="Script" path="res://scenes/ennemy1/trail2.gd" id="2_8v74i"]
-[ext_resource type="Texture2D" uid="uid://cff51obcsip5l" path="res://assets/PNG/Enemies/enemyBlack5.png" id="3_mp0ab"]
+[ext_resource type="Script" path="res://scenes/Enemies/Enemy1.gd" id="1_8fqih"]
+[ext_resource type="Script" path="res://scenes/Enemies/trail2.gd" id="2_xy4u4"]
+[ext_resource type="Texture2D" uid="uid://cff51obcsip5l" path="res://assets/PNG/Enemies/enemyBlack5.png" id="3_ihk5j"]
 
 [sub_resource type="Curve" id="Curve_cr2ot"]
 _data = [Vector2(0, 0.989011), 0.0, 1.4, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -12,33 +12,37 @@ point_count = 2
 offsets = PackedFloat32Array(0, 0.993333, 1)
 colors = PackedColorArray(0.374861, 0.00029947, 0.441163, 1, 0, 0, 0, 1, 1, 1, 1, 1)
 
-[node name="Ennemy" type="CharacterBody2D" groups=["ennemy"]]
+[node name="Enemy" type="CharacterBody2D" groups=["ennemy"]]
 scale = Vector2(0.25, 0.25)
 collision_layer = 4
 collision_mask = 5
 motion_mode = 1
-script = ExtResource("1_2emdu")
+script = ExtResource("1_8fqih")
 damage = 1
 
 [node name="trail" type="Line2D" parent="."]
 top_level = true
 z_index = -1
+points = PackedVector2Array(138, 176)
 width = 20.0
 width_curve = SubResource("Curve_cr2ot")
 gradient = SubResource("Gradient_7karw")
-script = ExtResource("2_8v74i")
+script = ExtResource("2_xy4u4")
 MAX_LENGTH = 30
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = -1.5708
-texture = ExtResource("3_mp0ab")
+scale = Vector2(2, 2)
+texture = ExtResource("3_ihk5j")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(2, 2)
 polygon = PackedVector2Array(40, -8, 32, -16, 32, -24, -40, -48, -40, -32, -24, -16, -24, 16, -40, 32, -40, 48, 32, 24, 32, 16, 40, 8)
 
 [node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(2, 2)
 collision_layer = 4
-collision_mask = 11
+collision_mask = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 polygon = PackedVector2Array(40, -8, 32, -16, 32, -24, -40, -48, -40, -32, -24, -16, -24, 16, -40, 32, -40, 48, 32, 24, 32, 16, 40, 8)

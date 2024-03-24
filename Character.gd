@@ -24,8 +24,6 @@ func process_body_interaction(collider: Node2D):
 	if collider.get("owner_bullet") != self || collider.get("owner_bullet") == null:
 		if collider.get("damage") != null:
 			take_damage(collider.damage)
-		if collider.get("health") != null:
-			print("%s died!" % get_class())
 		if collider.get("owner_bullet"):
 			collider.queue_free()
 
@@ -42,7 +40,7 @@ func take_damage(amount):
 		die()
 
 func die():
-	pass
+	print("%s died!" % get_class())
 
 func in_portal(Portal_Area : Area2D):
 	if not area.overlaps_area(Portal_Area):
