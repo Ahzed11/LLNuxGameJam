@@ -21,12 +21,17 @@ collision_mask = 5
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal_Area"]
 shape = SubResource("CircleShape2D_rrf4e")
 
-[node name="Timer_dead" type="Timer" parent="."]
-wait_time = 5.0
-one_shot = true
-
 [node name="Timer_Safe" type="Timer" parent="."]
+wait_time = 30.0
 one_shot = true
 
-[connection signal="timeout" from="Timer_dead" to="." method="_on_timer_dead_timeout"]
+[node name="Timer_Danger" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[node name="Timer_Tp" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="timeout" from="Timer_Safe" to="." method="_on_timer_safe_timeout"]
+[connection signal="timeout" from="Timer_Danger" to="." method="_on_timer_danger_timeout"]
+[connection signal="timeout" from="Timer_Tp" to="." method="_on_timer_tp_timeout"]
