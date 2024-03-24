@@ -14,5 +14,7 @@ func _process(_delta):
 func take_damage(amount):
 	super(amount)
 	SignalBus.on_player_take_damage.emit(amount)
-	if health == 0:
-		get_tree().paused = true
+
+func die():
+	super()
+	get_tree().paused = true
