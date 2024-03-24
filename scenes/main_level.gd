@@ -20,7 +20,4 @@ func _process(delta):
 		
 		time = 0
 		loc.progress_ratio = randf()
-		
-
-
 		add_child(new_ennemy1)

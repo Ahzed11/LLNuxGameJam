@@ -11,6 +11,7 @@ var direction: Vector2
 
 func _ready():
 	health.health_changed.connect(_take_damage)
+	health.take_damage(0)
 
 func _process(_delta):
 	direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down").normalized()
@@ -37,7 +38,7 @@ func _physics_process(_delta):
 			collider.health.die()
 
 func _take_damage(current_health, amount):
-	SignalBus.on_player_take_damage.emit(amount)
+	SignalBus.on_player_take_damage.emit(current_health, amount)
 	
 	if current_health == 0:
 		get_tree().paused = true

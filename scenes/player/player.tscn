@@ -37,6 +37,7 @@ script = ExtResource("3_v8set")
 MAX_LENGTH = 30
 
 [node name="Health" parent="." instance=ExtResource("3_svxwj")]
+max_health = 3
 
 [node name="PlayerCollision" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(144, 8, 64, 40, -24, 216, -128, 144, -112, 64, -144, 40, -144, -40, -112, -64, -128, -144, -24, -216, 64, -40, 144, -8)
