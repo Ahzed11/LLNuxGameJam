@@ -9,6 +9,7 @@ radius = 45.2769
 [node name="Node2D" type="Node2D"]
 scale = Vector2(2, 2)
 script = ExtResource("1_6uqw8")
+metadata/_edit_horizontal_guides_ = [-229.0]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_pua0s")
