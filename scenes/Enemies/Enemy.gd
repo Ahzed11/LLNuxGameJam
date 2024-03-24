@@ -4,6 +4,7 @@ class_name Enemy
 const run_speed = 50.0
 @onready var explosion := preload("res://scenes/audio/explosion/explosion.tscn")
 var player
+var score_points_on_death = 50
 
 func _ready():
 	super()
@@ -24,6 +25,7 @@ func die():
 	var explosion_instance = explosion.instantiate()
 	explosion_instance.position = global_position
 	get_tree().root.add_child(explosion_instance)
+	SignalBus.on_score_gained.emit(score_points_on_death)
 	queue_free()
 
 func go_die(a:bool):
