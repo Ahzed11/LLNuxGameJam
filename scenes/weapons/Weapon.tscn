@@ -33,8 +33,6 @@ texture = ExtResource("3_7mkf3")
 
 [node name="WeaponShootAudio" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_oxfhv")
-bus = &"SFX"
 
 [node name="WeaponReloadAudio" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_t2pyi")
-bus = &"SFX"
