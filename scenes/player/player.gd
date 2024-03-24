@@ -5,12 +5,10 @@ func _ready():
 	max_speed = 350
 	friction = 0.01
 	SignalBus.on_portail_end_of_danger.connect(is_inside)
+	SignalBus.on_player_take_damage.emit(health, 0)
 
 func _process(_delta):
 	direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down").normalized()
-	
-	if Input.is_key_pressed(KEY_K):
-		SignalBus.on_player_take_damage.emit(40)
 	
 func take_damage(amount):
 	super(amount)
