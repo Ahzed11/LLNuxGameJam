@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cuu6p3w5vtxwd"]
+
+[ext_resource type="Script" path="res://scenes/guide/guide.gd" id="1_bcbs6"]
+[ext_resource type="Texture2D" uid="uid://ds0lnci6mpb68" path="res://assets/Guide.png" id="2_ulehp"]
+
+[node name="Guide" type="Node2D"]
+modulate = Color(0.564706, 0.564706, 0.564706, 1)
+script = ExtResource("1_bcbs6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ulehp")
