@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dkw6m3qi2tdkj" path="res://assets/Backgrounds/spr_stars02.png" id="1_3vqe2"]
 [ext_resource type="Texture2D" uid="uid://c6m4qwk3mygqk" path="res://assets/Space Background.png" id="1_ofen6"]
+[ext_resource type="Script" path="res://scenes/Space.gd" id="2_rirun"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lnfrv"]
 size = Vector2(10000, 200)
@@ -41,6 +42,7 @@ texture_repeat = 2
 texture = ExtResource("1_ofen6")
 region_enabled = true
 region_rect = Rect2(0, 0, 10000, 10000)
+script = ExtResource("2_rirun")
 
 [node name="Layer2" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.4, 0.4)

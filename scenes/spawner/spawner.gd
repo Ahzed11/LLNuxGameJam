@@ -7,13 +7,20 @@ var player = %Player
 var mob_path
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Spawn_Time.start()
+	
 	mob_path = $Path2D/PathFollow2D
+	SignalBus.controle_spawner.connect(controle)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	pass
+
+func controle(start:bool):
+	if start :
+		$Spawn_Time.start()
+	else:
+		$Spawn_Time.stop()
 
 func _on_spawn_time_timeout():
 	var new_enemy: Enemy = enemy.instantiate()
