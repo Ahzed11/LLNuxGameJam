@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://k16spl1fjstm"]
+[gd_scene load_steps=11 format=3 uid="uid://k16spl1fjstm"]
 
 [ext_resource type="Script" path="res://scenes/main_level.gd" id="1_0yvhe"]
 [ext_resource type="PackedScene" uid="uid://d2q1okg2p2mtl" path="res://scenes/player/player.tscn" id="1_3ju6y"]
@@ -17,12 +17,6 @@ shader_parameter/shake_rate = 0.05
 shader_parameter/shake_speed = 5.0
 shader_parameter/shake_block_size = 30.5
 shader_parameter/shake_color_rate = 0.075
-
-[sub_resource type="Curve2D" id="Curve2D_2fx2g"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, -8, -8, 0, 0, 0, 0, 1288, -8, 0, 0, 0, 0, 1288, 736, 0, 0, 0, 0, 813.002, 730.278, 0, 0, 0, 0, -8, 736, 0, 0, 0, 0, -8, -8)
-}
-point_count = 6
 
 [node name="MainLevel" type="Node2D"]
 script = ExtResource("1_0yvhe")
@@ -55,9 +49,5 @@ offset_right = 679.0
 offset_bottom = 421.0
 
 [node name="Spawner" parent="." instance=ExtResource("8_bmhf0")]
-
-[node name="mobPaths" type="Path2D" parent="."]
-position = Vector2(-640, -359)
-curve = SubResource("Curve2D_2fx2g")
 
 [node name="DeathUI" parent="." instance=ExtResource("9_xntqj")]
