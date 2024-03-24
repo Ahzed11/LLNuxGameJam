@@ -9,7 +9,7 @@ func _ready():
 	SignalBus.on_portail_tp.emit(global_position)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 

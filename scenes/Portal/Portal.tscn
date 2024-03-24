@@ -1,7 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://booltlskuj0ki"]
+[gd_scene load_steps=6 format=3 uid="uid://booltlskuj0ki"]
 
 [ext_resource type="Script" path="res://scenes/Portal/Portal.gd" id="1_6uqw8"]
 [ext_resource type="Texture2D" uid="uid://d14ry3euwmrvh" path="res://assets/PNG/ufoBlue.png" id="1_pua0s"]
+[ext_resource type="Shader" path="res://scenes/Portal/Portal.gdshader" id="3_upb0f"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_taadm"]
+shader = ExtResource("3_upb0f")
+shader_parameter/shake_power = 0.03
+shader_parameter/shake_rate = 0.2
+shader_parameter/shake_speed = 5.0
+shader_parameter/shake_block_size = 100.0
+shader_parameter/shake_color_rate = 0.01
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rrf4e"]
 radius = 45.2769
@@ -13,6 +22,13 @@ metadata/_edit_horizontal_guides_ = [-229.0]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_pua0s")
+
+[node name="Glitch" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_taadm")
+offset_left = -117.0
+offset_top = -92.0
+offset_right = 121.0
+offset_bottom = 100.0
 
 [node name="Portal_Area" type="Area2D" parent="."]
 collision_layer = 8

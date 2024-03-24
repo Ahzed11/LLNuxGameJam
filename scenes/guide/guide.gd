@@ -7,7 +7,7 @@ func _ready():
 	SignalBus.on_portail_tp.connect(_on_portail_tp)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	look_at(spawn_position)
 	position = Vector2.from_angle((spawn_position-global_position).angle()-get_parent().global_rotation)*dist_from_center_of_rotation
 	if global_position.distance_to(spawn_position) < dist_from_center_of_rotation*2:
@@ -15,5 +15,5 @@ func _process(delta):
 	else:
 		visible = true
 
-func _on_portail_tp(position: Vector2):
-	spawn_position = position
+func _on_portail_tp(positionTp: Vector2):
+	spawn_position = positionTp

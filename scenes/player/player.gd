@@ -17,4 +17,4 @@ func take_damage(amount):
 
 func die():
 	super()
-	get_tree().paused = true
+	#get_tree().paused = true
