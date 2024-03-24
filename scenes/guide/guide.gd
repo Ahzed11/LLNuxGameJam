@@ -1,6 +1,6 @@
 extends Node2D
-
-var direction = Vector2.ZERO
+const dist_from_center_of_rotation = 100
+var spawn_position = Vector2.ZERO
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -8,7 +8,13 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	look_at(direction)
+	look_at(spawn_position)
+	position = Vector2.from_angle((spawn_position-global_position).angle()-get_parent().global_rotation)*dist_from_center_of_rotation
+	print(global_position.distance_to(spawn_position))
+	if global_position.distance_to(spawn_position) < dist_from_center_of_rotation*2:
+		visible = false
+	else:
+		visible = true
 
 func _on_portail_tp(position: Vector2):
-	direction = position
+	spawn_position = position
