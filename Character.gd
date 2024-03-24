@@ -15,7 +15,7 @@ var direction: Vector2
 
 
 func _ready():
-	add_to_group("Character")
+	
 	area.monitoring = true
 	area.body_entered.connect(process_body_interaction)
 	
