@@ -34,3 +34,7 @@ bus = &"SFX"
 [node name="WeaponReloadAudio" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_t2pyi")
 bus = &"SFX"
+
+[node name="WeaponVisible" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-1.19209e-07, -2.98023e-07)
+scale = Vector2(0.2, 0.2)
