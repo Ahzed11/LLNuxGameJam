@@ -3,6 +3,7 @@ extends Character
 class_name Enemy
 const run_speed = 50.0
 @onready var explosion := preload("res://scenes/audio/explosion/explosion.tscn")
+var player
 
 func _ready():
 	super()
@@ -14,7 +15,7 @@ func _ready():
 	health = 5
 
 func _physics_process(delta):
-	direction = position.direction_to(get_parent().get_node('Player').position)
+	direction = position.direction_to(player.position)
 	super(delta)
 
 func die():
