@@ -13,7 +13,6 @@ func _process(delta):
 	time += delta
 	if time > 1:
 		var new_ennemy1: Enemy = ennemy1.instantiate()
-		new_ennemy1.player = get_node("%Player")
 		new_ennemy1.position = loc.position
 		time = 0
 		loc.progress_ratio = randf()

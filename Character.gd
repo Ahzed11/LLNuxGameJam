@@ -6,11 +6,11 @@ var max_speed : float = 250
 var acceleration : float = 50
 var friction : float = 0.05
 @export var invicibility_delay: float = 1.0
-@export var damage = 0
+@export var damage = 5
 
 var direction: Vector2 
 
-@export var health = 20 
+@export var health = 20
 @onready var area: Area2D = $Area2D
 
 

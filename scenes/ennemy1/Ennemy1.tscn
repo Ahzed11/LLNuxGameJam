@@ -18,6 +18,7 @@ collision_layer = 4
 collision_mask = 5
 motion_mode = 1
 script = ExtResource("1_2emdu")
+damage = 1
 
 [node name="trail" type="Line2D" parent="."]
 top_level = true

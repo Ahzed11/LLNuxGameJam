@@ -1,8 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://bmouqko1mvlse"]
+[gd_scene load_steps=9 format=3 uid="uid://bmouqko1mvlse"]
 
 [ext_resource type="Script" path="res://scenes/weapons/Weapon.gd" id="1_7gokf"]
 [ext_resource type="PackedScene" uid="uid://dq3vhd7t71dev" path="res://scenes/weapons/bullets/Bullet.tscn" id="2_jrjk6"]
 [ext_resource type="Texture2D" uid="uid://6kl60dnr6dp6" path="res://assets/PNG/Parts/gun02.png" id="3_7mkf3"]
+[ext_resource type="AudioStream" uid="uid://bmswxhud30eaa" path="res://assets/Bonus/sfx_laser1.ogg" id="4_k601t"]
+[ext_resource type="AudioStream" uid="uid://cbjn5llxtjp0m" path="res://assets/Bonus/sfx_laser2.ogg" id="5_8f1i7"]
+[ext_resource type="AudioStream" uid="uid://5vopoy5jhmfe" path="res://assets/Bonus/sfx_lose.ogg" id="6_x6cbr"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_oxfhv"]
+streams_count = 2
+stream_0/stream = ExtResource("4_k601t")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("5_8f1i7")
+stream_1/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_t2pyi"]
+streams_count = 1
+stream_0/stream = ExtResource("6_x6cbr")
+stream_0/weight = 1.0
 
 [node name="Weapon" type="Node2D"]
 script = ExtResource("1_7gokf")
@@ -15,3 +30,9 @@ bullet = ExtResource("2_jrjk6")
 [node name="Gun02" type="Sprite2D" parent="."]
 rotation = 1.57079
 texture = ExtResource("3_7mkf3")
+
+[node name="WeaponShootAudio" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_oxfhv")
+
+[node name="WeaponReloadAudio" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_t2pyi")

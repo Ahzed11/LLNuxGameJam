@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://k16spl1fjstm"]
+[gd_scene load_steps=9 format=3 uid="uid://k16spl1fjstm"]
 
 [ext_resource type="Script" path="res://scenes/main_level.gd" id="1_0yvhe"]
 [ext_resource type="PackedScene" uid="uid://d2q1okg2p2mtl" path="res://scenes/player/player.tscn" id="1_3ju6y"]
 [ext_resource type="PackedScene" uid="uid://ji4qcbyfntfj" path="res://scenes/Map.tscn" id="1_7vx2y"]
 [ext_resource type="Script" path="res://scenes/utils/camera.gd" id="1_eqmcx"]
 [ext_resource type="PackedScene" uid="uid://uext6j0prhlf" path="res://scenes/ennemy1/Ennemy1.tscn" id="2_t3idd"]
+[ext_resource type="PackedScene" uid="uid://c2e6w01wjjx2b" path="res://scenes/UI/MainUI.tscn" id="3_mtapk"]
 [ext_resource type="PackedScene" uid="uid://booltlskuj0ki" path="res://scenes/Portal/Portal.tscn" id="4_tdgl1"]
 
 [sub_resource type="Curve2D" id="Curve2D_2fx2g"]
@@ -18,6 +19,8 @@ script = ExtResource("1_0yvhe")
 ennemy1 = ExtResource("2_t3idd")
 
 [node name="Map" parent="." instance=ExtResource("1_7vx2y")]
+
+[node name="MainUI" parent="Map" instance=ExtResource("3_mtapk")]
 
 [node name="Portal" parent="." instance=ExtResource("4_tdgl1")]
 position = Vector2(634, 362)

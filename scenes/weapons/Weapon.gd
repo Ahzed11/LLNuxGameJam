@@ -13,8 +13,10 @@ var target: Vector2 = Vector2.ZERO
 var is_reloading := false
 
 @onready var round_amount := max_round_amount
-@onready var shoot_timer : Timer = $ShootTimer
-@onready var reload_timer : Timer = $ReloadTimer
+@onready var shoot_timer: Timer = $ShootTimer
+@onready var reload_timer: Timer = $ReloadTimer
+@onready var weapon_audio := $WeaponShootAudio
+@onready var reload_audio := $WeaponReloadAudio
 
 func _ready():
 	shoot_timer.wait_time = shoot_delay
@@ -34,6 +36,8 @@ func _process(delta):
 		shoot_timer.start()
 	
 func _shoot():
+	weapon_audio.play()
+	
 	var new_bullet: Bullet = bullet.instantiate()
 	new_bullet.owner_bullet = owner_
 	new_bullet.position = global_position
@@ -45,9 +49,13 @@ func _shoot():
 func _on_shoot_timer():
 	_shoot()
 	if round_amount == 0:
-		shoot_timer.stop()
-		reload_timer.start()
-	
+		_reload()
+
+func _reload():
+	shoot_timer.stop()
+	reload_timer.start()
+	reload_audio.play()
+
 func _on_reload_timer():
 	is_reloading = false
 	round_amount = max_round_amount
