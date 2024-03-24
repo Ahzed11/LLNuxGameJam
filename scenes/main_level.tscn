@@ -13,7 +13,7 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_asb36"]
 shader = ExtResource("8_jnvhj")
 shader_parameter/shake_power = 0.03
-shader_parameter/shake_rate = 0.2
+shader_parameter/shake_rate = 0.05
 shader_parameter/shake_speed = 5.0
 shader_parameter/shake_block_size = 30.5
 shader_parameter/shake_color_rate = 0.075

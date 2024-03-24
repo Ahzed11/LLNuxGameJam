@@ -13,6 +13,7 @@ func _ready():
 	friction = 0.05
 	damage = 20
 	health = 5
+	SignalBus.on_portail_end_of_danger.connect(go_die)
 
 func _physics_process(delta):
 	direction = position.direction_to(player.position)
@@ -24,3 +25,6 @@ func die():
 	explosion_instance.position = global_position
 	get_tree().root.add_child(explosion_instance)
 	queue_free()
+
+func go_die(a:bool):
+	die()

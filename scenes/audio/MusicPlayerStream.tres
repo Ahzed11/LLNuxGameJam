@@ -1,0 +1,14 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=4 format=3 uid="uid://bcluf1mpmkseq"]
+
+[ext_resource type="AudioStream" uid="uid://daqh65gqy47pu" path="res://assets/Music/Space1.mp3" id="1_osk37"]
+[ext_resource type="AudioStream" uid="uid://c66ys8n00wumx" path="res://assets/Music/Space2.mp3" id="2_grf5s"]
+[ext_resource type="AudioStream" uid="uid://d387y2yv6lk62" path="res://assets/Music/space.mp3" id="3_m10id"]
+
+[resource]
+streams_count = 3
+stream_0/stream = ExtResource("1_osk37")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("2_grf5s")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("3_m10id")
+stream_2/weight = 1.0
