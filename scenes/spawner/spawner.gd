@@ -13,6 +13,7 @@ var asteroid_path
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	mob_path = $Path2D/PathFollow2D
+	asteroid_path = $Path2D/asteroidPath
 	SignalBus.controle_spawner.connect(controle)
 	SignalBus.on_portail_tp.connect(difficulty_incr)
 
@@ -54,8 +55,8 @@ func _on_spawn_time_timeout():
 func _on_asteroid_timer_timeout():
 	var new_asteroid = asteroid.instantiate()
 	position = player.position
-	mob_path.progress_ratio = randf()
+	asteroid_path.progress_ratio = randf()
 
-	new_asteroid.position = mob_path.position + position
+	new_asteroid.position = asteroid_path.position + position
 
 	get_parent().add_child(new_asteroid)
