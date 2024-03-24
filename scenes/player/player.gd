@@ -11,8 +11,8 @@ func _process(_delta):
 	direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down").normalized()
 	
 func take_damage(amount):
-	super(amount)
 	SignalBus.on_player_take_damage.emit(health, amount)
+	super(amount)
 
 func die():
 	super()
