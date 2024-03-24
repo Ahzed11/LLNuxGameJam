@@ -40,7 +40,7 @@ func _process(delta):
 		offset = _random_offset()
 	
 	if $Glitch.visible:
-		acc += delta/10
+		acc += delta
 		$Glitch.material.set_shader_parameter("shake rate",acc)
 
 func _apply_shake(_health, amount):
