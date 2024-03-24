@@ -1,6 +1,5 @@
-[gd_scene load_steps=7 format=3 uid="uid://bbtje43htj5vh"]
+[gd_scene load_steps=11 format=3 uid="uid://bbtje43htj5vh"]
 
-[ext_resource type="Texture2D" uid="uid://t26m2pry26q6" path="res://icon.svg" id="1_3m4at"]
 [ext_resource type="AudioStream" uid="uid://5xuox7lw6626" path="res://assets/SFX/explosion1.wav" id="1_bfu4p"]
 [ext_resource type="Script" path="res://scenes/audio/explosion/explosion.gd" id="1_qt67q"]
 [ext_resource type="AudioStream" uid="uid://bv6y7upy5emlb" path="res://assets/SFX/explosion2.wav" id="2_i4lng"]
@@ -15,9 +14,45 @@ stream_1/weight = 1.0
 stream_2/stream = ExtResource("3_hi5mr")
 stream_2/weight = 1.0
 
+[sub_resource type="Gradient" id="Gradient_uh1jx"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_1j076"]
+gradient = SubResource("Gradient_uh1jx")
+
+[sub_resource type="Curve" id="Curve_ri3kw"]
+max_value = 3.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.951923, 2.82545), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_va4ox"]
+curve = SubResource("Curve_ri3kw")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_mrtmj"]
+lifetime_randomness = 0.14
+particle_flag_disable_z = true
+particle_flag_damping_as_friction = true
+emission_shape = 1
+emission_sphere_radius = 32.0
+inherit_velocity_ratio = 0.271
+direction = Vector3(0, 0, 0)
+gravity = Vector3(0, 0, 0)
+radial_accel_max = 82.02
+tangential_accel_max = 15.3
+damping_max = 3.095
+scale_min = 3.0
+scale_max = 8.55
+scale_over_velocity_max = 123.53
+scale_over_velocity_curve = SubResource("CurveTexture_va4ox")
+color_ramp = SubResource("GradientTexture1D_1j076")
+turbulence_noise_strength = 6.41
+turbulence_noise_speed = Vector3(2, 2, 2)
+turbulence_noise_speed_random = 1.35
+sub_emitter_mode = 2
+sub_emitter_amount_at_end = 3
+
 [node name="Explosion" type="Sprite2D"]
 modulate = Color(1, 0, 0, 1)
-texture = ExtResource("1_3m4at")
 script = ExtResource("1_qt67q")
 timer_delay = 0.3
 
@@ -27,4 +62,13 @@ autoplay = true
 bus = &"SFX"
 
 [node name="ExplosionTimer" type="Timer" parent="."]
+wait_time = 2.0
 autostart = true
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 40
+process_material = SubResource("ParticleProcessMaterial_mrtmj")
+one_shot = true
+preprocess = 0.4
+randomness = 0.45
