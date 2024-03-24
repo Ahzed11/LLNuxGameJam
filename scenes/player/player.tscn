@@ -66,19 +66,19 @@ position = Vector2(29, 0)
 position = Vector2(0, 38)
 
 [node name="Turret2" parent="Turrets" instance=ExtResource("6_2phko")]
-position = Vector2(7, 26)
+position = Vector2(1, -39)
 
 [node name="Turret3" parent="Turrets" instance=ExtResource("6_2phko")]
-position = Vector2(15, 14)
+position = Vector2(7, 25)
 
 [node name="Turret4" parent="Turrets" instance=ExtResource("6_2phko")]
-position = Vector2(0, -38)
+position = Vector2(5, -27)
 
 [node name="Turret5" parent="Turrets" instance=ExtResource("6_2phko")]
-position = Vector2(7, -26)
+position = Vector2(15, 11)
 
 [node name="Turret6" parent="Turrets" instance=ExtResource("6_2phko")]
-position = Vector2(15, -14)
+position = Vector2(15, -13)
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_mask = 14

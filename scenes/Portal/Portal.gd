@@ -24,7 +24,8 @@ func _on_timer_danger_timeout():
 func _on_timer_tp_timeout():
 	tp_counter+=1
 	%GPUParticles2D.position = position
-	%GPUParticles2D.emitting = true
+	if tp_counter > 1:
+		%GPUParticles2D.emitting = true
 	var player_position = %Player.position
 	position = player_position + Vector2(randf_range(-3000,3000),randf_range(-3000,3000))
 	SignalBus.on_portail_tp.emit(global_position, tp_counter)

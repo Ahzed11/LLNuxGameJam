@@ -5,6 +5,7 @@ var player = %Player
 var difficulty = -1
 const enemy1 = preload("res://scenes/Enemies/Enemy1.tscn")
 const enemy2 = preload("res://scenes/Enemies/Enemy2.tscn")
+const weapon = preload("res://scenes/weapons/Weapon.tscn")
 
 @export var enemy: PackedScene
 @export var asteroid: PackedScene
@@ -28,6 +29,13 @@ func controle(start:bool):
 		
 func difficulty_incr(_discard, counter):
 	difficulty+=1
+	if difficulty > 1:
+		var turrets = player.find_child("Turrets", false, false)
+		for child in turrets.children.slice(difficulty,difficulty+1):
+			var w = weapon.instantiate()
+			w.owner_ = player
+			child.add_child(w)
+
 
 func _on_spawn_time_timeout():
 	var new_enemy: Enemy
