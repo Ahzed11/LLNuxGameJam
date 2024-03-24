@@ -15,6 +15,7 @@ var direction: Vector2
 
 
 func _ready():
+	add_to_group("Character")
 	area.monitoring = true
 	area.body_entered.connect(process_body_interaction)
 	
@@ -37,3 +38,12 @@ func _physics_process(_delta):
 
 func take_damage(amount):
 	health -= amount
+	if health <= 0:
+		die()
+
+func die():
+	pass
+
+func in_portal(Portal_Area : Area2D):
+	if not area.overlaps_area(Portal_Area):
+		die()

@@ -7,14 +7,17 @@
 radius = 45.2769
 
 [node name="Node2D" type="Node2D"]
+scale = Vector2(2, 2)
 script = ExtResource("1_6uqw8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_pua0s")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Portal_Area" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 5
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal_Area"]
 shape = SubResource("CircleShape2D_rrf4e")
 
 [node name="Timer_dead" type="Timer" parent="."]

@@ -5,7 +5,7 @@ extends Node2D
 func _ready():
 	print(position)
 	print(global_position)
-	$Timer_dead.start()
+	$Timer_Safe.start(0.1)
 	SignalBus.on_portail_tp.emit(global_position)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -20,4 +20,5 @@ func _on_timer_safe_timeout():
 	$Timer_dead.start()
 
 func _on_timer_dead_timeout():
+	get_tree().call_group("Character","in_portal",$Portal_Area)
 	$Timer_Safe.start()

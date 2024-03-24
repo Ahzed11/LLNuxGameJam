@@ -17,10 +17,9 @@ func _physics_process(delta):
 	direction = position.direction_to(get_parent().get_node('Player').position)
 	super(delta)
 
-func take_damage(amount):
-	super(amount)
-	if health <= 0:
-		var explosion_instance = explosion.instantiate()
-		explosion_instance.position = global_position
-		get_tree().root.add_child(explosion_instance)
-		queue_free()
+func die():
+	super()
+	var explosion_instance = explosion.instantiate()
+	explosion_instance.position = global_position
+	get_tree().root.add_child(explosion_instance)
+	queue_free()
