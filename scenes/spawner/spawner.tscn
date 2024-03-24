@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ylbrmy03y0e5"]
 
 [ext_resource type="Script" path="res://scenes/spawner/spawner.gd" id="1_bpxcv"]
-[ext_resource type="PackedScene" uid="uid://crrvmojgtbg14" path="res://scenes/Enemies/Enemy2.tscn" id="2_vy5r6"]
+[ext_resource type="PackedScene" uid="uid://uext6j0prhlf" path="res://scenes/Enemies/Enemy1.tscn" id="2_r0nab"]
 
 [sub_resource type="Curve2D" id="Curve2D_0drs4"]
 _data = {
@@ -11,7 +11,7 @@ point_count = 5
 
 [node name="Spawner" type="Node2D"]
 script = ExtResource("1_bpxcv")
-enemy = ExtResource("2_vy5r6")
+enemy = ExtResource("2_r0nab")
 
 [node name="Spawn_Time" type="Timer" parent="."]
 
