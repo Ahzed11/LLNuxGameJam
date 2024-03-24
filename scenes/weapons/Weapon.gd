@@ -40,6 +40,7 @@ func _shoot():
 	
 	var new_bullet: Bullet = bullet.instantiate()
 	new_bullet.owner_bullet = owner_
+	new_bullet.linear_velocity = owner_.velocity
 	new_bullet.position = global_position
 	new_bullet.rotation = global_rotation
 	get_tree().root.add_child(new_bullet)

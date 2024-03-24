@@ -8,3 +8,4 @@ extends Sprite2D
 func _ready():
 	timer.wait_time = timer_delay
 	timer.timeout.connect(queue_free)
+	$'GPUParticles2D'.emitting = true
