@@ -8,5 +8,5 @@ script = ExtResource("1_45fqq")
 
 [node name="Turret" type="Sprite2D" parent="."]
 rotation = 4.71239
-scale = Vector2(2, 2)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_sbgd1")

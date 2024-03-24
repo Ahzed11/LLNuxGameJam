@@ -21,7 +21,6 @@ ennemy1 = ExtResource("2_t3idd")
 
 [node name="Player" parent="." instance=ExtResource("1_3ju6y")]
 unique_name_in_owner = true
-scale = Vector2(0.1, 0.1)
 
 [node name="Parent" type="Node2D" parent="."]
 position = Vector2(640, 360)
