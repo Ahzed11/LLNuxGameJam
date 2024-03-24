@@ -10,6 +10,7 @@ class_name Weapon
 var owner_: Character
 
 var target: Vector2 = Vector2.ZERO
+var can_shoot := false
 var is_reloading := false
 
 @onready var round_amount := max_round_amount
@@ -17,6 +18,7 @@ var is_reloading := false
 @onready var reload_timer: Timer = $ReloadTimer
 @onready var weapon_audio := $WeaponShootAudio
 @onready var reload_audio := $WeaponReloadAudio
+@onready var weapon_visible := $WeaponVisible
 
 func _ready():
 	shoot_timer.wait_time = shoot_delay
@@ -24,12 +26,14 @@ func _ready():
 	
 	shoot_timer.timeout.connect(_on_shoot_timer)
 	reload_timer.timeout.connect(_on_reload_timer)
+	weapon_visible.screen_exited.connect(func(): can_shoot = false; print(self))
+	weapon_visible.screen_entered.connect(func(): can_shoot = true; print(self))
 
 func _process(delta):
 	if target == null:
 		shoot_timer.stop()
 	
-	if is_reloading:
+	if is_reloading or not can_shoot:
 		shoot_timer.stop()
 	
 	if not is_reloading and round_amount > 0 and target != null and shoot_timer.is_stopped():
