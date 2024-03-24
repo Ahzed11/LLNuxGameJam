@@ -7,6 +7,7 @@ func _ready():
 
 
 func update_ui(current_health, _discard):
+	print("aie j'ai mal")
 	var children = get_children()
 	for child in children:
 		child.queue_free()

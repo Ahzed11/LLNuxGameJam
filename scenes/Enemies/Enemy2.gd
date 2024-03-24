@@ -10,3 +10,4 @@ func _ready():
 	friction = 0.05
 	damage = 20
 	health = 5
+	score_points_on_death = 100
