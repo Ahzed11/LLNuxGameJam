@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://k16spl1fjstm"]
+[gd_scene load_steps=11 format=3 uid="uid://k16spl1fjstm"]
 
 [ext_resource type="Script" path="res://scenes/main_level.gd" id="1_0yvhe"]
 [ext_resource type="PackedScene" uid="uid://d2q1okg2p2mtl" path="res://scenes/player/player.tscn" id="1_3ju6y"]
@@ -7,6 +7,15 @@
 [ext_resource type="PackedScene" uid="uid://uext6j0prhlf" path="res://scenes/ennemy1/Ennemy1.tscn" id="2_t3idd"]
 [ext_resource type="PackedScene" uid="uid://c2e6w01wjjx2b" path="res://scenes/UI/MainUI.tscn" id="3_mtapk"]
 [ext_resource type="PackedScene" uid="uid://booltlskuj0ki" path="res://scenes/Portal/Portal.tscn" id="4_tdgl1"]
+[ext_resource type="Shader" path="res://scenes/Portal/Portal.gdshader" id="8_jnvhj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_asb36"]
+shader = ExtResource("8_jnvhj")
+shader_parameter/shake_power = 0.03
+shader_parameter/shake_rate = 0.2
+shader_parameter/shake_speed = 5.0
+shader_parameter/shake_block_size = 30.5
+shader_parameter/shake_color_rate = 0.01
 
 [sub_resource type="Curve2D" id="Curve2D_2fx2g"]
 _data = {
@@ -34,6 +43,14 @@ position = Vector2(640, 360)
 position = Vector2(-640, -360)
 anchor_mode = 0
 script = ExtResource("1_eqmcx")
+
+[node name="Glitch" type="ColorRect" parent="Parent/Camera"]
+z_index = 12
+material = SubResource("ShaderMaterial_asb36")
+offset_left = -94.0
+offset_top = -72.0
+offset_right = 1359.0
+offset_bottom = 794.0
 
 [node name="mobPaths" type="Path2D" parent="."]
 curve = SubResource("Curve2D_2fx2g")
