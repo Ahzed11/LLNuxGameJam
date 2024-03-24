@@ -19,7 +19,10 @@ shape = SubResource("CircleShape2D_rrf4e")
 
 [node name="Timer_dead" type="Timer" parent="."]
 wait_time = 5.0
+one_shot = true
 
 [node name="Timer_Safe" type="Timer" parent="."]
+one_shot = true
 
 [connection signal="timeout" from="Timer_dead" to="." method="_on_timer_dead_timeout"]
+[connection signal="timeout" from="Timer_Safe" to="." method="_on_timer_safe_timeout"]

@@ -23,11 +23,10 @@ ennemy1 = ExtResource("2_t3idd")
 [node name="MainUI" parent="Map" instance=ExtResource("3_mtapk")]
 
 [node name="Portal" parent="." instance=ExtResource("4_tdgl1")]
-position = Vector2(634, 362)
 
 [node name="Player" parent="." instance=ExtResource("1_3ju6y")]
 unique_name_in_owner = true
-position = Vector2(204, 95)
+position = Vector2(0, 0)
 scale = Vector2(0.1, 0.1)
 
 [node name="Parent" type="Node2D" parent="."]

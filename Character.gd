@@ -19,8 +19,7 @@ func _ready():
 	area.body_entered.connect(process_body_interaction)
 	
 func process_body_interaction(collider: Node2D):
-	print(self)
-	print(collider.get("owner_bullet"))
+
 	if collider.get("owner_bullet") != self || collider.get("owner_bullet") == null:
 		if collider.get("damage") != null:
 			take_damage(collider.damage)

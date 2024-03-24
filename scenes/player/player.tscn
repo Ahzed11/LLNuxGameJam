@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://d2q1okg2p2mtl"]
+[gd_scene load_steps=11 format=3 uid="uid://d2q1okg2p2mtl"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_g6pqx"]
 [ext_resource type="Texture2D" uid="uid://dehl1ccaacu54" path="res://assets/PNG/playerShip2_blue.png" id="2_u36rm"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bmouqko1mvlse" path="res://scenes/weapons/Weapon.tscn" id="5_er62b"]
 [ext_resource type="Script" path="res://scenes/player/Turrets.gd" id="5_qxt0y"]
 [ext_resource type="PackedScene" uid="uid://betlq25oennow" path="res://scenes/weapons/Turret/turret.tscn" id="6_2phko"]
+[ext_resource type="PackedScene" uid="uid://cuu6p3w5vtxwd" path="res://scenes/guide/guide.tscn" id="7_is52a"]
 
 [sub_resource type="Curve" id="Curve_c1cg8"]
 _data = [Vector2(0, 0.989011), 0.0, 1.4, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -30,7 +31,6 @@ func _process(delta):
 "
 
 [node name="Player" type="CharacterBody2D"]
-position = Vector2(-1, -2)
 collision_mask = 4
 motion_mode = 1
 script = ExtResource("1_g6pqx")
@@ -76,6 +76,9 @@ position = Vector2(8, -128)
 
 [node name="Turret6" parent="Turrets" instance=ExtResource("6_2phko")]
 position = Vector2(32, -64)
+
+[node name="Guide" parent="." instance=ExtResource("7_is52a")]
+scale = Vector2(5, 5)
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_mask = 6

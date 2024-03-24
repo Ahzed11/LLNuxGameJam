@@ -1,10 +1,9 @@
 extends Node2D
 
-var direction
+var direction = Vector2.ZERO
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	direction = %Portal.position
 	SignalBus.on_portail_tp.connect(_on_portail_tp)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
