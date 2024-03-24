@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://ji4qcbyfntfj"]
+[gd_scene load_steps=6 format=3 uid="uid://ji4qcbyfntfj"]
 
 [ext_resource type="Texture2D" uid="uid://dkw6m3qi2tdkj" path="res://assets/Backgrounds/spr_stars02.png" id="1_3vqe2"]
 [ext_resource type="Texture2D" uid="uid://c6m4qwk3mygqk" path="res://assets/Space Background.png" id="1_ofen6"]

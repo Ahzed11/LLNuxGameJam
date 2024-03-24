@@ -15,5 +15,5 @@ func _process(_delta):
 	else:
 		visible = true
 
-func _on_portail_tp(positionTp: Vector2):
+func _on_portail_tp(positionTp: Vector2, _discard):
 	spawn_position = positionTp

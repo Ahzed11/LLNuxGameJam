@@ -21,8 +21,6 @@ var is_reloading := false
 @onready var weapon_visible := $WeaponVisible
 
 func _ready():
-	shoot_timer.wait_time = shoot_delay
-	reload_timer.wait_time = reload_delay
 	
 	shoot_timer.timeout.connect(_on_shoot_timer)
 	reload_timer.timeout.connect(_on_reload_timer)
@@ -30,6 +28,8 @@ func _ready():
 	weapon_visible.screen_entered.connect(func(): can_shoot = true; print(self))
 
 func _process(delta):
+	shoot_timer.wait_time = shoot_delay
+	reload_timer.wait_time = reload_delay
 	if target == null:
 		shoot_timer.stop()
 	

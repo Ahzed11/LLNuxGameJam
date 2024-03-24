@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d14ry3euwmrvh" path="res://assets/PNG/ufoBlue.png" id="1_pua0s"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rrf4e"]
-radius = 45.2769
+radius = 91.0055
 
 [node name="Node2D" type="Node2D"]
 scale = Vector2(2, 2)
@@ -12,6 +12,7 @@ script = ExtResource("1_6uqw8")
 metadata/_edit_horizontal_guides_ = [-229.0]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
 texture = ExtResource("1_pua0s")
 
 [node name="Portal_Area" type="Area2D" parent="."]

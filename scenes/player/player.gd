@@ -1,9 +1,12 @@
 extends Character
 
+
+
 func _ready():
 	super()
 	max_speed = 350
 	friction = 0.01
+	damage = 15
 	SignalBus.on_portail_end_of_danger.connect(is_inside)
 
 func _process(_delta):
@@ -13,12 +16,13 @@ func _process(_delta):
 		SignalBus.on_player_take_damage.emit(40)
 	
 func take_damage(amount):
+	print("Took %d damage" % amount)
 	super(amount)
 	SignalBus.on_player_take_damage.emit(health, amount)
 
 func die():
 	super()
-	#get_tree().paused = true
+	get_tree().paused = true
 	
 func is_inside(inside: bool):
 	if not inside:

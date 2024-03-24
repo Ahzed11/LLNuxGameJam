@@ -23,8 +23,10 @@ func process_body_interaction(collider: Node2D):
 	if collider.get("owner_bullet") != self || collider.get("owner_bullet") == null:
 		if collider.get("damage") != null:
 			take_damage(collider.damage)
-		if collider.get("owner_bullet"):
-			collider.queue_free()
+		if collider.get("owner_bullet") != null:
+			if !collider.owner_bullet.is_queued_for_deletion():
+				take_damage(collider.owner_bullet.damage)
+				collider.queue_free()
 
 func _physics_process(_delta):
 	velocity = velocity.lerp(Vector2.ZERO, friction)

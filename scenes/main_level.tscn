@@ -20,9 +20,9 @@ shader_parameter/shake_color_rate = 0.075
 
 [sub_resource type="Curve2D" id="Curve2D_2fx2g"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -8, -8, 0, 0, 0, 0, 1288, -8, 0, 0, 0, 0, 1288, 736, 0, 0, 0, 0, -8, 736, 0, 0, 0, 0, -8, -8)
+"points": PackedVector2Array(0, 0, 0, 0, -8, -8, 0, 0, 0, 0, 1288, -8, 0, 0, 0, 0, 1288, 736, 0, 0, 0, 0, 813.002, 730.278, 0, 0, 0, 0, -8, 736, 0, 0, 0, 0, -8, -8)
 }
-point_count = 5
+point_count = 6
 
 [node name="MainLevel" type="Node2D"]
 script = ExtResource("1_0yvhe")
@@ -31,6 +31,10 @@ ennemy1 = ExtResource("2_imeru")
 [node name="Map" parent="." instance=ExtResource("1_7vx2y")]
 
 [node name="MainUI" parent="Map" instance=ExtResource("3_mtapk")]
+offset_left = -958.0
+offset_top = -542.0
+offset_right = -958.0
+offset_bottom = -542.0
 
 [node name="Portal" parent="." instance=ExtResource("4_tdgl1")]
 
@@ -38,23 +42,21 @@ ennemy1 = ExtResource("2_imeru")
 unique_name_in_owner = true
 
 [node name="Parent" type="Node2D" parent="."]
-position = Vector2(640, 360)
 
 [node name="Camera" type="Camera2D" parent="Parent"]
-position = Vector2(-640, -360)
-anchor_mode = 0
 script = ExtResource("1_eqmcx")
 
 [node name="Glitch" type="ColorRect" parent="Parent/Camera"]
 visible = false
 z_index = 12
 material = SubResource("ShaderMaterial_asb36")
-offset_left = -94.0
-offset_top = -72.0
-offset_right = 1359.0
-offset_bottom = 794.0
+offset_left = -774.0
+offset_top = -445.0
+offset_right = 679.0
+offset_bottom = 421.0
 
 [node name="Spawner" parent="." instance=ExtResource("8_bmhf0")]
 
 [node name="mobPaths" type="Path2D" parent="."]
+position = Vector2(-640, -359)
 curve = SubResource("Curve2D_2fx2g")
