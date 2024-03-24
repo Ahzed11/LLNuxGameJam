@@ -1,9 +1,35 @@
-[gd_scene load_steps=3 format=3 uid="uid://ji4qcbyfntfj"]
+[gd_scene load_steps=5 format=3 uid="uid://ji4qcbyfntfj"]
 
 [ext_resource type="Texture2D" uid="uid://dkw6m3qi2tdkj" path="res://assets/Backgrounds/spr_stars02.png" id="1_3vqe2"]
 [ext_resource type="Texture2D" uid="uid://c6m4qwk3mygqk" path="res://assets/Space Background.png" id="1_ofen6"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lnfrv"]
+size = Vector2(10000, 200)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5lnar"]
+size = Vector2(200, 10400)
+
 [node name="Parallax" type="CanvasLayer"]
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -5100)
+shape = SubResource("RectangleShape2D_lnfrv")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 5100)
+shape = SubResource("RectangleShape2D_lnfrv")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-5100, 0)
+shape = SubResource("RectangleShape2D_5lnar")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(5100, 0)
+shape = SubResource("RectangleShape2D_5lnar")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -12,7 +38,6 @@ motion_scale = Vector2(0.2, 0.2)
 
 [node name="Space" type="Sprite2D" parent="ParallaxBackground/Layer1"]
 texture_repeat = 2
-position = Vector2(641, 362)
 texture = ExtResource("1_ofen6")
 region_enabled = true
 region_rect = Rect2(0, 0, 10000, 10000)
@@ -22,7 +47,6 @@ motion_scale = Vector2(0.4, 0.4)
 
 [node name="StarLayer1" type="Sprite2D" parent="ParallaxBackground/Layer2"]
 texture_repeat = 2
-position = Vector2(634, 365)
 texture = ExtResource("1_3vqe2")
 region_enabled = true
 region_rect = Rect2(0, 0, 10000, 10000)
@@ -31,7 +55,6 @@ region_rect = Rect2(0, 0, 10000, 10000)
 
 [node name="StarLayer2" type="Sprite2D" parent="ParallaxBackground/Layer3"]
 texture_repeat = 2
-position = Vector2(634, 350)
 texture = ExtResource("1_3vqe2")
 flip_h = true
 flip_v = true
@@ -43,7 +66,6 @@ motion_scale = Vector2(0.8, 0.8)
 
 [node name="StarLayer2" type="Sprite2D" parent="ParallaxBackground/Layer4"]
 texture_repeat = 2
-position = Vector2(634, 350)
 texture = ExtResource("1_3vqe2")
 offset = Vector2(1, 0)
 flip_h = true
@@ -55,7 +77,6 @@ motion_scale = Vector2(0.9, 0.9)
 
 [node name="StarLayer2" type="Sprite2D" parent="ParallaxBackground/Layer5"]
 texture_repeat = 2
-position = Vector2(634, 350)
 texture = ExtResource("1_3vqe2")
 flip_v = true
 region_enabled = true
