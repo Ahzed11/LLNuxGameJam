@@ -30,7 +30,7 @@ func _process(delta):
 		shake_strength = lerpf(shake_strength, 0, shake_fade * delta)
 		offset = _random_offset()
 
-func _apply_shake(amount):
+func _apply_shake(_health, amount):
 	shake_strength = amount
 
 func _random_offset() -> Vector2:

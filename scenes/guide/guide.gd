@@ -10,7 +10,6 @@ func _ready():
 func _process(delta):
 	look_at(spawn_position)
 	position = Vector2.from_angle((spawn_position-global_position).angle()-get_parent().global_rotation)*dist_from_center_of_rotation
-	print(global_position.distance_to(spawn_position))
 	if global_position.distance_to(spawn_position) < dist_from_center_of_rotation*2:
 		visible = false
 	else:

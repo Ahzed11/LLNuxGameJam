@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://d2q1okg2p2mtl" path="res://scenes/player/player.tscn" id="1_3ju6y"]
 [ext_resource type="PackedScene" uid="uid://ji4qcbyfntfj" path="res://scenes/Map.tscn" id="1_7vx2y"]
 [ext_resource type="Script" path="res://scenes/utils/camera.gd" id="1_eqmcx"]
-[ext_resource type="PackedScene" uid="uid://uext6j0prhlf" path="res://scenes/ennemy1/Ennemy1.tscn" id="2_t3idd"]
+[ext_resource type="PackedScene" uid="uid://uext6j0prhlf" path="res://scenes/Enemies/Enemy1.tscn" id="2_imeru"]
 [ext_resource type="PackedScene" uid="uid://c2e6w01wjjx2b" path="res://scenes/UI/MainUI.tscn" id="3_mtapk"]
 [ext_resource type="PackedScene" uid="uid://booltlskuj0ki" path="res://scenes/Portal/Portal.tscn" id="4_tdgl1"]
 [ext_resource type="PackedScene" uid="uid://ylbrmy03y0e5" path="res://scenes/spawner/spawner.tscn" id="8_bmhf0"]
@@ -26,7 +26,7 @@ point_count = 5
 
 [node name="MainLevel" type="Node2D"]
 script = ExtResource("1_0yvhe")
-ennemy1 = ExtResource("2_t3idd")
+ennemy1 = ExtResource("2_imeru")
 
 [node name="Map" parent="." instance=ExtResource("1_7vx2y")]
 
