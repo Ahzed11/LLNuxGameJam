@@ -7,6 +7,11 @@ var tp_counter = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Timer_Tp.start(0.1)
+	
+func _process(delta):
+	if not $Timer_Danger.is_stopped() and $Portal_Area.has_overlapping_areas():
+		_on_portal_area_area_entered(Vector2.ZERO)
+		
 
 func _on_timer_safe_timeout():
 	$Timer_Danger.start()
@@ -24,7 +29,7 @@ func _on_timer_tp_timeout():
 	SignalBus.on_portail_tp.emit(global_position, tp_counter)
 	$Timer_Safe.start()
 
-func _on_portal_area_area_entered(area):
+func _on_portal_area_area_entered(_area):
 	if not $Timer_Danger.is_stopped():
 		$Timer_Danger.stop()
 		$Timer_Tp.start()
