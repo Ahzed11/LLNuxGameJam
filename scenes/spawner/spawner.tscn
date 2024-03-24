@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://ylbrmy03y0e5"]
+[gd_scene load_steps=4 format=3 uid="uid://ylbrmy03y0e5"]
 
 [ext_resource type="Script" path="res://scenes/spawner/spawner.gd" id="1_bpxcv"]
 [ext_resource type="PackedScene" uid="uid://uext6j0prhlf" path="res://scenes/Enemies/Enemy1.tscn" id="2_r0nab"]
-[ext_resource type="PackedScene" uid="uid://dhqjpl6jg7ymp" path="res://scenes/asteroid/Asteroid1.tscn" id="3_uv3al"]
 
 [sub_resource type="Curve2D" id="Curve2D_0drs4"]
 _data = {
@@ -13,12 +12,8 @@ point_count = 5
 [node name="Spawner" type="Node2D"]
 script = ExtResource("1_bpxcv")
 enemy = ExtResource("2_r0nab")
-asteroid = ExtResource("3_uv3al")
 
 [node name="Spawn_Time" type="Timer" parent="."]
-
-[node name="Asteroid_Timer" type="Timer" parent="."]
-autostart = true
 
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_0drs4")
@@ -27,9 +22,4 @@ curve = SubResource("Curve2D_0drs4")
 position = Vector2(0, -1280)
 rotation = 0.785398
 
-[node name="Asteroid_path" type="PathFollow2D" parent="Path2D"]
-position = Vector2(0, -1280)
-rotation = 0.785398
-
 [connection signal="timeout" from="Spawn_Time" to="." method="_on_spawn_time_timeout"]
-[connection signal="timeout" from="Asteroid_Timer" to="." method="_on_asteroid_timer_timeout"]

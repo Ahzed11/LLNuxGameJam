@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bwjhnlr2ejobr"]
+[gd_scene load_steps=4 format=3 uid="uid://cgisrovy5lnea"]
 
 [ext_resource type="Script" path="res://scenes/UI/AudioMenu.gd" id="1_dlepy"]
 [ext_resource type="Texture2D" uid="uid://c6m4qwk3mygqk" path="res://assets/Space Background.png" id="1_j2hub"]
@@ -72,7 +72,7 @@ text = "Master"
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
-min_value = -6.0
+min_value = -12.0
 max_value = 6.0
 step = 0.1
 
@@ -87,7 +87,7 @@ text = "    FX     "
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
-min_value = -6.0
+min_value = -12.0
 max_value = 6.0
 step = 0.1
 
@@ -102,7 +102,7 @@ text = "Music   "
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
-min_value = -6.0
+min_value = -12.0
 max_value = 6.0
 step = 0.1
 
