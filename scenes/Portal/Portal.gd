@@ -10,11 +10,14 @@ func _on_timer_safe_timeout():
 	SignalBus.on_portail_end_of_safe.emit()
 	
 func _on_timer_danger_timeout():
+	print("tp")
 	$Timer_Tp.start()
-	get_tree().call_group("Character","in_portal",$Portal_Area)
 	SignalBus.on_portail_end_of_danger.emit()
+	get_tree().call_group("Character","in_portal",$Portal_Area)
+	
 
 func _on_timer_tp_timeout():
+	print("tp")
 	var player_position = %Player.position
 	position = player_position + Vector2(randf_range(-5000,5000),randf_range(-5000,5000))
 	SignalBus.on_portail_tp.emit(global_position)
