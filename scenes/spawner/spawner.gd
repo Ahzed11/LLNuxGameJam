@@ -2,7 +2,7 @@ extends Node2D
 
 @onready
 var player = %Player
-var difficulty = 1
+var difficulty = -1
 const enemy1 = preload("res://scenes/Enemies/Enemy1.tscn")
 const enemy2 = preload("res://scenes/Enemies/Enemy2.tscn")
 
@@ -28,7 +28,8 @@ func difficulty_incr(_discard, counter):
 	difficulty+=1
 
 func _on_spawn_time_timeout():
-	var new_enemy: Enemy 
+	var new_enemy: Enemy
+	print("Difficulty: %d", difficulty)
 	if difficulty%3==0 || (difficulty > 5 && difficulty%2==0):
 		new_enemy = enemy2.instantiate()
 		new_enemy.max_speed = 200 + 10*difficulty
@@ -46,5 +47,3 @@ func _on_spawn_time_timeout():
 	new_enemy.player = player
 
 	get_parent().add_child(new_enemy)
-	new_enemy.health = 1+difficulty*2
-	new_enemy.damage = 1+difficulty

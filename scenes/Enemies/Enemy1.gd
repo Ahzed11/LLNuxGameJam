@@ -8,5 +8,3 @@ func _ready():
 	max_speed = 250
 	acceleration = 50
 	friction = 0.05
-	damage = 20
-	health = 5

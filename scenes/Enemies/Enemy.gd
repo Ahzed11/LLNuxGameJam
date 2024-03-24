@@ -12,8 +12,6 @@ func _ready():
 	max_speed = 250
 	acceleration = 50
 	friction = 0.05
-	damage = 20
-	health = 5
 	SignalBus.on_portail_end_of_danger.connect(go_die)
 
 func _physics_process(delta):

@@ -2,10 +2,10 @@ extends Enemy
 
 class_name Enemy2
 
-@export var shoot_delay: float = 1.0
-@export var reload_delay: float = 2.0
-@export var max_round_amount: int = 6
-@export var amount_out: int = 1
+@export var shoot_delay: float
+@export var reload_delay: float
+@export var max_round_amount: int
+@export var amount_out: int
 
 func _ready():
 	super()
@@ -13,6 +13,4 @@ func _ready():
 	max_speed = 250
 	acceleration = 50
 	friction = 0.05
-	damage = 5
-	health = 5
 	score_points_on_death = 100

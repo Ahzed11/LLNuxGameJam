@@ -30,10 +30,7 @@ script = ExtResource("1_0yvhe")
 [node name="Map" parent="." instance=ExtResource("1_7vx2y")]
 
 [node name="MainUI" parent="Map" instance=ExtResource("3_mtapk")]
-offset_left = -958.0
-offset_top = -542.0
-offset_right = -958.0
-offset_bottom = -542.0
+pivot_offset = Vector2(2, 2)
 
 [node name="Portal" parent="." instance=ExtResource("4_tdgl1")]
 
