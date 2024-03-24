@@ -6,6 +6,10 @@ var children: Array[Node]
 func _ready():
 	children = find_children("*", "Turret", false)
 
+	var weapon_children = find_children("*", "Weapon", true)
+	for child in weapon_children:
+		print(child)
+		child.owner_ = get_parent()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_g6pqx"]
 [ext_resource type="Texture2D" uid="uid://dehl1ccaacu54" path="res://assets/PNG/playerShip2_blue.png" id="2_u36rm"]
-[ext_resource type="PackedScene" uid="uid://cm8ubmkegxwd1" path="res://scenes/utils/health.tscn" id="3_svxwj"]
 [ext_resource type="Script" path="res://scenes/ennemy1/trail2.gd" id="3_v8set"]
 [ext_resource type="PackedScene" uid="uid://bmouqko1mvlse" path="res://scenes/weapons/Weapon.tscn" id="5_er62b"]
 [ext_resource type="Script" path="res://scenes/player/Turrets.gd" id="5_qxt0y"]
@@ -16,11 +15,25 @@ point_count = 2
 offsets = PackedFloat32Array(0, 0.993333, 1)
 colors = PackedColorArray(0.737255, 0.054902, 0.117647, 1, 0.623175, 0.63, 0.2205, 1, 1, 1, 1, 1)
 
+[sub_resource type="GDScript" id="GDScript_rc4jf"]
+script/source = "extends Area2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
 [node name="Player" type="CharacterBody2D"]
-collision_mask = 12
+position = Vector2(-1, -2)
+collision_mask = 4
 motion_mode = 1
 script = ExtResource("1_g6pqx")
-max_speed = 600.0
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
 rotation = 1.5708
@@ -36,8 +49,6 @@ gradient = SubResource("Gradient_muv0t")
 script = ExtResource("3_v8set")
 MAX_LENGTH = 30
 
-[node name="Health" parent="." instance=ExtResource("3_svxwj")]
-
 [node name="PlayerCollision" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(144, 8, 64, 40, -24, 216, -128, 144, -112, 64, -144, 40, -144, -40, -112, -64, -128, -144, -24, -216, 64, -40, 144, -8)
 
@@ -49,25 +60,26 @@ script = ExtResource("5_qxt0y")
 [node name="Weapon" parent="Turrets/Turret" instance=ExtResource("5_er62b")]
 
 [node name="Turret1" parent="Turrets" instance=ExtResource("6_2phko")]
-visible = false
 position = Vector2(-24, 192)
 
 [node name="Turret2" parent="Turrets" instance=ExtResource("6_2phko")]
-visible = false
 position = Vector2(8, 128)
 
 [node name="Turret3" parent="Turrets" instance=ExtResource("6_2phko")]
-visible = false
 position = Vector2(32, 64)
 
 [node name="Turret4" parent="Turrets" instance=ExtResource("6_2phko")]
-visible = false
 position = Vector2(-24, -192)
 
 [node name="Turret5" parent="Turrets" instance=ExtResource("6_2phko")]
-visible = false
 position = Vector2(8, -128)
 
 [node name="Turret6" parent="Turrets" instance=ExtResource("6_2phko")]
-visible = false
 position = Vector2(32, -64)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 6
+script = SubResource("GDScript_rc4jf")
+
+[node name="PlayerCollision2" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(144, 8, 64, 40, -24, 216, -128, 144, -112, 64, -144, 40, -144, -40, -112, -64, -128, -144, -24, -216, 64, -40, 144, -8)
