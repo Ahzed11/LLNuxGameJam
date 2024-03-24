@@ -3,7 +3,6 @@ class_name Bullet
 
 @export var lifetime := 0.2
 @export var speed := 1200
-@export var damage = 10
 var owner_bullet: Character
 @onready var bullet_timer: Timer = $BulletTimer
 

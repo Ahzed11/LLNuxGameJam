@@ -1,6 +1,8 @@
 extends Node2D
 
 var first_portal : bool = true
+var tp_counter = 0
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,10 +18,10 @@ func _on_timer_danger_timeout():
 	SignalBus.on_portail_end_of_danger.emit(false)
 
 func _on_timer_tp_timeout():
-	
+	tp_counter+=1
 	var player_position = %Player.position
-	position = player_position + Vector2(randf_range(-5000,5000),randf_range(-5000,5000))
-	SignalBus.on_portail_tp.emit(global_position)
+	position = player_position + Vector2(randf_range(-3000,3000),randf_range(-3000,3000))
+	SignalBus.on_portail_tp.emit(global_position, tp_counter)
 	$Timer_Safe.start()
 
 func _on_portal_area_area_entered(area):

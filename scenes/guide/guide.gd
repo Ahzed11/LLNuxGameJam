@@ -32,7 +32,7 @@ func _process(_delta):
 			$Sprite2D.modulate = Color(255, 0, 0, 1)
 
 
-func _on_portail_tp(positionTp: Vector2):
+func _on_portail_tp(positionTp: Vector2, _discard):
 	spawn_position = positionTp
 	$Sprite2D.modulate = Color(255, 255, 255, 1)
 	$Sprite2D.scale = Vector2(0.5,0.5)
