@@ -16,7 +16,8 @@ func take_damage(amount):
 
 func die():
 	super()
-	#get_tree().paused = true
+	SignalBus.on_player_death.emit()
+	process_mode = Node.PROCESS_MODE_DISABLED
 	
 func is_inside(inside: bool):
 	if not inside:

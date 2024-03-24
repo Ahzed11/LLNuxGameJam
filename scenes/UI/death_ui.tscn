@@ -1,0 +1,71 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqnogtclrqxcc"]
+
+[ext_resource type="Script" path="res://scenes/UI/death_ui.gd" id="1_am6oi"]
+[ext_resource type="Script" path="res://scenes/UI/ScoreLabel.gd" id="1_bnr5m"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wjjk0"]
+font_size = 48
+
+[node name="DeathUI" type="CanvasLayer" node_paths=PackedStringArray("replay_btn", "main_menu_btn", "quit_btn")]
+script = ExtResource("1_am6oi")
+replay_btn = NodePath("AspectRatioContainer/Vertical/Play")
+main_menu_btn = NodePath("AspectRatioContainer/Vertical/MainMenu")
+quit_btn = NodePath("AspectRatioContainer/Vertical/Quit")
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+ratio = 0.6
+
+[node name="Vertical" type="VBoxContainer" parent="AspectRatioContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Spacer3" type="Label" parent="AspectRatioContainer/Vertical"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "
+"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="AspectRatioContainer/Vertical"]
+layout_mode = 2
+text = "You died !"
+label_settings = SubResource("LabelSettings_wjjk0")
+horizontal_alignment = 1
+
+[node name="Score" type="Label" parent="AspectRatioContainer/Vertical"]
+layout_mode = 2
+text = "Score "
+label_settings = SubResource("LabelSettings_wjjk0")
+horizontal_alignment = 1
+script = ExtResource("1_bnr5m")
+
+[node name="Spacer" type="Label" parent="AspectRatioContainer/Vertical"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "
+"
+horizontal_alignment = 1
+
+[node name="Play" type="Button" parent="AspectRatioContainer/Vertical"]
+layout_mode = 2
+text = "Play again"
+
+[node name="MainMenu" type="Button" parent="AspectRatioContainer/Vertical"]
+layout_mode = 2
+text = "Main menu"
+
+[node name="Quit" type="Button" parent="AspectRatioContainer/Vertical"]
+layout_mode = 2
+text = "Quit"
+
+[node name="Spacer2" type="Label" parent="AspectRatioContainer/Vertical"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "
+"
+horizontal_alignment = 1
